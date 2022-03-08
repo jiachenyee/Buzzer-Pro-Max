@@ -10,9 +10,9 @@
 		32C11A7027D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */; };
 		32C11A7127D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */; };
 		32C11A7227D7955000561F2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6127D7954F00561F2B /* ContentView.swift */; };
-		32C11A7327D7955000561F2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6127D7954F00561F2B /* ContentView.swift */; };
 		32C11A7427D7955000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A6227D7955000561F2B /* Assets.xcassets */; };
 		32C11A7527D7955000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A6227D7955000561F2B /* Assets.xcassets */; };
+		32C11A8027D79B4D00561F2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A7F27D79B4D00561F2B /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +22,7 @@
 		32C11A6727D7955000561F2B /* Buzzer Pro Max.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buzzer Pro Max.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C11A6D27D7955000561F2B /* Buzzer Pro Max.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buzzer Pro Max.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C11A6F27D7955000561F2B /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		32C11A7F27D79B4D00561F2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				32C11A5F27D7954F00561F2B /* Shared */,
+				32C11A7E27D7958600561F2B /* iOS */,
 				32C11A6E27D7955000561F2B /* macOS */,
 				32C11A6827D7955000561F2B /* Products */,
 			);
@@ -55,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */,
-				32C11A6127D7954F00561F2B /* ContentView.swift */,
 				32C11A6227D7955000561F2B /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -74,8 +75,17 @@
 			isa = PBXGroup;
 			children = (
 				32C11A6F27D7955000561F2B /* macOS.entitlements */,
+				32C11A7F27D79B4D00561F2B /* ContentView.swift */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		32C11A7E27D7958600561F2B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				32C11A6127D7954F00561F2B /* ContentView.swift */,
+			);
+			path = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,7 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32C11A7327D7955000561F2B /* ContentView.swift in Sources */,
+				32C11A8027D79B4D00561F2B /* ContentView.swift in Sources */,
 				32C11A7127D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
