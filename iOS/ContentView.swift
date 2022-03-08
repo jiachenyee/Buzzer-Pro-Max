@@ -18,6 +18,7 @@ struct ContentView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100)
+                
                 Text("Swift Innovators’ Summit 2022")
                     .fontWeight(.bold)
                     .foregroundColor(.white)
