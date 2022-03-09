@@ -28,6 +28,6 @@ struct FlagView: View {
 
 struct FlagView_Previews: PreviewProvider {
     static var previews: some View {
-        Flag(groupNumber: 1)
+        FlagView(groupNumber: 1)
     }
 }
