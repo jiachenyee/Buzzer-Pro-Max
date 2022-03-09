@@ -15,6 +15,8 @@ struct TriviaView: View {
     
     var question: TriviaQuestion
     
+    @State private var respondedToQuestion = false
+    
     var body: some View {
         ZStack {
             Color.black
@@ -38,20 +40,32 @@ struct TriviaView: View {
                 
                 Spacer()
                 
-                Text(question.title)
-                    .multilineTextAlignment(.center)
-                    .font(.system(size: 90, weight: .bold))
-                
-                Spacer()
-                
-                Text("Tap anywhere on the screen to buzz in!")
-                    .font(.system(size: 36, weight: .regular))
+                if respondedToQuestion {
+                    Text("Buzzed!")
+                    
+                    Spacer()
+                    
+                    Text("Wait for your team to be called up!")
+                        .font(.system(size: 36, weight: .regular))
+                } else {
+                    Text(question.title)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 90, weight: .bold))
+                    
+                    Spacer()
+                    
+                    Text("Tap anywhere on the screen to buzz in!")
+                        .font(.system(size: 36, weight: .regular))
+                }
             }
             .padding()
             .foregroundColor(.white)
         }
         .onTapGesture {
-            communicationManager.send(message: TriviaBuzzerMessage(group: group, sendDate: .now))
+            if respondedToQuestion {
+                communicationManager.send(message: TriviaBuzzerMessage(group: group, sendDate: .now))
+                respondedToQuestion = true
+            }
         }
     }
 }
