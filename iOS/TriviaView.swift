@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TriviaView: View {
+    
+    var question: TriviaQuestion
+    
     var body: some View {
         ZStack {
             Color.black
@@ -28,7 +31,7 @@ struct TriviaView: View {
                 
                 Spacer()
                 
-                Text("Name one iPhone from every year in chronological order")
+                Text(question.title)
                     .multilineTextAlignment(.center)
                     .font(.system(size: 90, weight: .bold))
                 
@@ -45,7 +48,7 @@ struct TriviaView: View {
 
 struct TriviaView_Previews: PreviewProvider {
     static var previews: some View {
-        TriviaView()
+        TriviaView(question: TriviaQuestion(title: "Name one iPhone from every year in chronological order", duration: 10))
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
