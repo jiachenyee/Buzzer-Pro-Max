@@ -14,7 +14,13 @@ struct TriviaManagerView: View {
     @ObservedObject var communicationManager: CommunicationManager
     
     var body: some View {
-        Text("hello potato")
+        if let stringQuestionIndex = communicationManager.commandInfo["questionNo"],
+            let questionIndex = Int(stringQuestionIndex) {
+            
+            TriviaView(group: group,
+                       communicationManager: communicationManager,
+                       question: TriviaQuestion.all[questionIndex])
+        }
     }
 }
 
