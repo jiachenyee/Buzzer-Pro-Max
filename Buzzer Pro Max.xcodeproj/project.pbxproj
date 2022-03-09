@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
 		32C11A7027D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */; };
 		32C11A7227D7955000561F2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6127D7954F00561F2B /* ContentView.swift */; };
 		32C11A7427D7955000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A6227D7955000561F2B /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buzzer_Pro_MaxApp.swift; sourceTree = "<group>"; };
 		32C11A6127D7954F00561F2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		32C11A6227D7955000561F2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */,
 				32C11A6127D7954F00561F2B /* ContentView.swift */,
 				32C11A8127D79DAB00561F2B /* TriviaView.swift */,
+				329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */,
 				32C11AA227D854E000561F2B /* TriviaQuestion.swift in Sources */,
 				32C11A7227D7955000561F2B /* ContentView.swift in Sources */,
 				32C11A9D27D83A1900561F2B /* TriviaView.swift in Sources */,
