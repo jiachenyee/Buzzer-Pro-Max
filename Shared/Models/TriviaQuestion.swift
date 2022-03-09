@@ -1,6 +1,6 @@
 //
 //  TriviaQuestion.swift
-//  Buzzer Pro Max (macOS)
+//  Buzzer Pro Max (Shared)
 //
 //  Created by Jia Chen Yee on 8/3/22.
 //

@@ -1,6 +1,6 @@
 //
 //  FlagView.swift
-//  Buzzer Pro Max (macOS)
+//  Buzzer Pro Max (Shared)
 //
 //  Created by Jia Chen Yee on 9/3/22.
 //
