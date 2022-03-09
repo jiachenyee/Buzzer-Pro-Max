@@ -12,13 +12,15 @@
 		32C11A7427D7955000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A6227D7955000561F2B /* Assets.xcassets */; };
 		32C11A7527D7955000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A6227D7955000561F2B /* Assets.xcassets */; };
 		32C11A8027D79B4D00561F2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A7F27D79B4D00561F2B /* ContentView.swift */; };
-		32C11A8227D79DAB00561F2B /* TriviaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A8127D79DAB00561F2B /* TriviaView.swift */; };
 		32C11A8627D7A10800561F2B /* TriviaQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A8527D7A10800561F2B /* TriviaQuestion.swift */; };
 		32C11A8F27D7A3BF00561F2B /* ControllerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A8E27D7A3BF00561F2B /* ControllerApp.swift */; };
 		32C11A9127D7A3BF00561F2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A9027D7A3BF00561F2B /* ContentView.swift */; };
 		32C11A9327D7A3C000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A9227D7A3C000561F2B /* Assets.xcassets */; };
 		32C11A9627D7A3C000561F2B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A9527D7A3C000561F2B /* Preview Assets.xcassets */; };
 		32C11A9C27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A9B27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift */; };
+		32C11A9D27D83A1900561F2B /* TriviaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A8127D79DAB00561F2B /* TriviaView.swift */; };
+		32C11A9F27D83B5800561F2B /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A9E27D83B5800561F2B /* FlagView.swift */; };
+		32C11AA027D83DD700561F2B /* FlagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A9E27D83B5800561F2B /* FlagView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,7 @@
 		32C11A9227D7A3C000561F2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32C11A9527D7A3C000561F2B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		32C11A9B27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buzzer_Pro_MaxApp.swift; sourceTree = "<group>"; };
+		32C11A9E27D83B5800561F2B /* FlagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				32C11A6227D7955000561F2B /* Assets.xcassets */,
+				32C11A9E27D83B5800561F2B /* FlagView.swift */,
 				32C11A9A27D7A49900561F2B /* Models */,
 			);
 			path = Shared;
@@ -270,7 +274,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32C11A7227D7955000561F2B /* ContentView.swift in Sources */,
+				32C11A9D27D83A1900561F2B /* TriviaView.swift in Sources */,
 				32C11A7027D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */,
+				32C11AA027D83DD700561F2B /* FlagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,9 +285,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				32C11A8027D79B4D00561F2B /* ContentView.swift in Sources */,
-				32C11A8227D79DAB00561F2B /* TriviaView.swift in Sources */,
 				32C11A9C27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift in Sources */,
 				32C11A8627D7A10800561F2B /* TriviaQuestion.swift in Sources */,
+				32C11A9F27D83B5800561F2B /* FlagView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
