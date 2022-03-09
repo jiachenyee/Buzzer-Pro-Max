@@ -11,7 +11,7 @@ struct SetupView: View {
     
     @Binding var group: Group?
     
-    @State var groupName: String = ""
+    @State var groupName: String = "cold chocolate"
     
     var body: some View {
         ZStack {

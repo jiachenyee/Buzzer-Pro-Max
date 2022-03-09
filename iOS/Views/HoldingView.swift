@@ -1,13 +1,13 @@
 //
-//  ContentView.swift
-//  Shared
+//  HoldingView.swift
+//  Buzzer Pro Max (macOS)
 //
 //  Created by Jia Chen Yee on 8/3/22.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct HoldingView: View {
     var body: some View {
         ZStack {
             Color.black
@@ -29,8 +29,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HoldingView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HoldingView()
     }
 }

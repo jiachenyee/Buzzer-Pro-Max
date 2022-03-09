@@ -17,7 +17,7 @@
 		329F49CE27D90CD5004C2D84 /* Group+GroupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49CC27D90C64004C2D84 /* Group+GroupData.swift */; };
 		329F49D027D91210004C2D84 /* GameManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49CF27D91210004C2D84 /* GameManagerView.swift */; };
 		32C11A7027D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */; };
-		32C11A7227D7955000561F2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6127D7954F00561F2B /* ContentView.swift */; };
+		32C11A7227D7955000561F2B /* HoldingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6127D7954F00561F2B /* HoldingView.swift */; };
 		32C11A7427D7955000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A6227D7955000561F2B /* Assets.xcassets */; };
 		32C11A7527D7955000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A6227D7955000561F2B /* Assets.xcassets */; };
 		32C11A8027D79B4D00561F2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A7F27D79B4D00561F2B /* ContentView.swift */; };
@@ -47,7 +47,7 @@
 		329F49CC27D90C64004C2D84 /* Group+GroupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+GroupData.swift"; sourceTree = "<group>"; };
 		329F49CF27D91210004C2D84 /* GameManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerView.swift; sourceTree = "<group>"; };
 		32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buzzer_Pro_MaxApp.swift; sourceTree = "<group>"; };
-		32C11A6127D7954F00561F2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		32C11A6127D7954F00561F2B /* HoldingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingView.swift; sourceTree = "<group>"; };
 		32C11A6227D7955000561F2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32C11A6727D7955000561F2B /* Buzzer Pro Max.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buzzer Pro Max.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C11A6D27D7955000561F2B /* Buzzer Pro Max.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buzzer Pro Max.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +84,7 @@
 		329F49BD27D8EBF8004C2D84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				32C11A6127D7954F00561F2B /* ContentView.swift */,
+				32C11A6127D7954F00561F2B /* HoldingView.swift */,
 				329F49C027D8F3FC004C2D84 /* SetupView.swift */,
 				329F49D127D91215004C2D84 /* Game Views */,
 			);
@@ -335,7 +335,7 @@
 			files = (
 				329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */,
 				32C11AA227D854E000561F2B /* TriviaQuestion.swift in Sources */,
-				32C11A7227D7955000561F2B /* ContentView.swift in Sources */,
+				32C11A7227D7955000561F2B /* HoldingView.swift in Sources */,
 				32C11A9D27D83A1900561F2B /* TriviaView.swift in Sources */,
 				329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */,
 				32C11AA427D8564700561F2B /* Messagable.swift in Sources */,
