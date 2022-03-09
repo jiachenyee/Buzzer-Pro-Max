@@ -13,6 +13,4 @@ struct TriviaBuzzerMessage: iPadMessage {
     var group: String
     
     var sendDate: Date
-    
-    var buzzDateTime: Date
 }
