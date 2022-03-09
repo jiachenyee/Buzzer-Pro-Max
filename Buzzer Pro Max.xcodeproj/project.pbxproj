@@ -15,6 +15,7 @@
 		329F49CB27D90C44004C2D84 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C927D90C3C004C2D84 /* Group.swift */; };
 		329F49CD27D90C64004C2D84 /* Group+GroupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49CC27D90C64004C2D84 /* Group+GroupData.swift */; };
 		329F49CE27D90CD5004C2D84 /* Group+GroupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49CC27D90C64004C2D84 /* Group+GroupData.swift */; };
+		329F49D027D91210004C2D84 /* GameManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49CF27D91210004C2D84 /* GameManagerView.swift */; };
 		32C11A7027D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */; };
 		32C11A7227D7955000561F2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6127D7954F00561F2B /* ContentView.swift */; };
 		32C11A7427D7955000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A6227D7955000561F2B /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		329F49C727D9083B004C2D84 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		329F49C927D90C3C004C2D84 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		329F49CC27D90C64004C2D84 /* Group+GroupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+GroupData.swift"; sourceTree = "<group>"; };
+		329F49CF27D91210004C2D84 /* GameManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManagerView.swift; sourceTree = "<group>"; };
 		32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buzzer_Pro_MaxApp.swift; sourceTree = "<group>"; };
 		32C11A6127D7954F00561F2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		32C11A6227D7955000561F2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,7 +86,7 @@
 			children = (
 				32C11A6127D7954F00561F2B /* ContentView.swift */,
 				329F49C027D8F3FC004C2D84 /* SetupView.swift */,
-				32C11A8127D79DAB00561F2B /* TriviaView.swift */,
+				329F49D127D91215004C2D84 /* Game Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -103,6 +105,32 @@
 				329F49C727D9083B004C2D84 /* GameState.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		329F49D127D91215004C2D84 /* Game Views */ = {
+			isa = PBXGroup;
+			children = (
+				329F49CF27D91210004C2D84 /* GameManagerView.swift */,
+				32C11A8127D79DAB00561F2B /* TriviaView.swift */,
+			);
+			path = "Game Views";
+			sourceTree = "<group>";
+		};
+		329F49D227D912A9004C2D84 /* Group Information */ = {
+			isa = PBXGroup;
+			children = (
+				329F49C927D90C3C004C2D84 /* Group.swift */,
+				329F49CC27D90C64004C2D84 /* Group+GroupData.swift */,
+			);
+			path = "Group Information";
+			sourceTree = "<group>";
+		};
+		329F49D327D912AF004C2D84 /* Game Information */ = {
+			isa = PBXGroup;
+			children = (
+				32C11A8527D7A10800561F2B /* TriviaQuestion.swift */,
+			);
+			path = "Game Information";
 			sourceTree = "<group>";
 		};
 		32C11A5A27D7954F00561F2B = {
@@ -160,9 +188,8 @@
 		32C11A9A27D7A49900561F2B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				32C11A8527D7A10800561F2B /* TriviaQuestion.swift */,
-				329F49C927D90C3C004C2D84 /* Group.swift */,
-				329F49CC27D90C64004C2D84 /* Group+GroupData.swift */,
+				329F49D327D912AF004C2D84 /* Game Information */,
+				329F49D227D912A9004C2D84 /* Group Information */,
 				32C11AA927D85F8400561F2B /* Communication */,
 			);
 			path = Models;
@@ -318,6 +345,7 @@
 				32C11AAB27D85F9A00561F2B /* TriviaMessage.swift in Sources */,
 				329F49C827D9083B004C2D84 /* GameState.swift in Sources */,
 				329F49CD27D90C64004C2D84 /* Group+GroupData.swift in Sources */,
+				329F49D027D91210004C2D84 /* GameManagerView.swift in Sources */,
 				32C11AA027D83DD700561F2B /* FlagView.swift in Sources */,
 				32C11AAE27D860FD00561F2B /* iPadMessage.swift in Sources */,
 			);

@@ -12,14 +12,16 @@ struct BuzzerProMaxApp: App {
     
     @StateObject var communicationManager = CommunicationManager()
     
-    var groupNumber = 0
+    @State private var group: Group?
     
     var body: some Scene {
         WindowGroup {
-            TriviaView(communicationManager: communicationManager,
-                       question: TriviaQuestion(title: "Potato Potato Potaot",
-                                                duration: 10))
-                .statusBar(hidden: true)
+            if let group = group {
+                GameManagerView(group: group, communicationManager: communicationManager)
+                    .statusBar(hidden: true)
+            } else {
+                SetupView(group: $group)
+            }
         }
     }
 }

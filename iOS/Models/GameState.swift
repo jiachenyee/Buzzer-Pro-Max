@@ -8,5 +8,9 @@
 import Foundation
 
 enum GameState {
-    
+    case holding
+    case trivia
+    case clicker
+    case flag
+    case sketches
 }

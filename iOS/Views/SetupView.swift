@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct SetupView: View {
+    
+    @Binding var group: Group?
+    
     var body: some View {
         ZStack {
             Color.black
@@ -31,6 +34,6 @@ struct SetupView: View {
 
 struct SetupView_Previews: PreviewProvider {
     static var previews: some View {
-        SetupView()
+        SetupView(group: .constant(Group(number: 1, name: "cold chocolate")))
     }
 }
