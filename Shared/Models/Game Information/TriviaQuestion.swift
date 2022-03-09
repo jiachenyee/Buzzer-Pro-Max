@@ -10,4 +10,8 @@ import Foundation
 struct TriviaQuestion {
     var title: String
     var duration: TimeInterval
+    
+    static var all: [TriviaQuestion] = [
+        TriviaQuestion(title: "Potato Potato", duration: 10)
+    ]
 }

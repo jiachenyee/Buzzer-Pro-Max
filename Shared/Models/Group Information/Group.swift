@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Group: Identifiable, Hashable {
+struct Group: Identifiable, Hashable, Codable {
     
     var id: Int { number }
     

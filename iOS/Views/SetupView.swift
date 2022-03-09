@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SetupView: View {
     
+    #warning("Any pairing work should be done here.")
+    
     @Binding var group: Group?
     
     @State var groupName: String = "cold chocolate"

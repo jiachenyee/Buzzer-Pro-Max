@@ -10,7 +10,7 @@ import Foundation
 struct TriviaBuzzerMessage: iPadMessage {
     var sender = Sender.iPad
     
-    var group: String
+    var group: Group
     
     var sendDate: Date
 }

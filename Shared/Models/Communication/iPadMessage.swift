@@ -8,5 +8,5 @@
 import Foundation
 
 protocol iPadMessage: Messagable {
-    var group: String { get set }
+    var group: Group { get set }
 }
