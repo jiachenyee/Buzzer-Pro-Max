@@ -29,6 +29,9 @@ struct TriviaView: View {
                     }
                     
                     Spacer()
+                    
+                    FlagView(groupNumber: 1)
+                        .frame(width: 100)
                 }
                 
                 Spacer()
