@@ -66,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		329F49BD27D8EBF8004C2D84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				32C11A6127D7954F00561F2B /* ContentView.swift */,
+				32C11A8127D79DAB00561F2B /* TriviaView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		32C11A5A27D7954F00561F2B = {
 			isa = PBXGroup;
 			children = (
@@ -109,8 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */,
-				32C11A6127D7954F00561F2B /* ContentView.swift */,
-				32C11A8127D79DAB00561F2B /* TriviaView.swift */,
+				329F49BD27D8EBF8004C2D84 /* Views */,
 				329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */,
 			);
 			path = iOS;
