@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct Group {
+struct Group: Identifiable, Hashable {
+    
+    var id: Int { number }
+    
     var number: Int
     var name: String
 }

@@ -11,6 +11,8 @@ struct SetupView: View {
     
     @Binding var group: Group?
     
+    @State var groupName: String = ""
+    
     var body: some View {
         ZStack {
             Color.black
@@ -27,6 +29,18 @@ struct SetupView: View {
                     .foregroundColor(.white)
                     .padding()
                 
+                Picker("Groups", selection: $groupName) {
+                    ForEach(Group.groups) { group in
+                        Text("\(group.number)-\(group.name)")
+                            .tag(group.name)
+                    }
+                }
+                
+                Button("Go") {
+                    group = Group.groups.first { $0.name == groupName }
+                }
+                .buttonStyle(.bordered)
+                .padding()
             }
         }
     }
