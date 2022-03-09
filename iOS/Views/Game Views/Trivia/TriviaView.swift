@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TriviaView: View {
     
+    var group: Group
+    
     @ObservedObject var communicationManager: CommunicationManager
     
     var question: TriviaQuestion
@@ -49,14 +51,15 @@ struct TriviaView: View {
             .foregroundColor(.white)
         }
         .onTapGesture {
-            
+            communicationManager.send(message: TriviaBuzzerMessage(group: group, sendDate: .now))
         }
     }
 }
 
 struct TriviaView_Previews: PreviewProvider {
     static var previews: some View {
-        TriviaView(communicationManager: CommunicationManager(), question:
+        TriviaView(group: Group(number: 1, name: "cold chocolate"),
+                   communicationManager: CommunicationManager(), question:
                     TriviaQuestion(title: "Name one iPhone from every year in chronological order", duration: 10))
             .previewInterfaceOrientation(.landscapeLeft)
     }

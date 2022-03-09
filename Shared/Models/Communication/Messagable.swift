@@ -10,4 +10,8 @@ import Foundation
 protocol Messagable: Codable {
     var sender: Sender { get set }
     var sendDate: Date { get set }
+    
+    func toJSONData() -> Data?
+    
+    static func from(data: Data) -> Self?
 }

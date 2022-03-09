@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum GameState {
+enum GameState: Codable {
     case holding
     case trivia
     case clicker

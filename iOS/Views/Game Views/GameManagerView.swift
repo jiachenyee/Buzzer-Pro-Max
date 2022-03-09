@@ -11,18 +11,14 @@ struct GameManagerView: View {
     
     var group: Group
     
-    @State private var gameState: GameState = .holding
-    
     @ObservedObject var communicationManager: CommunicationManager
     
     var body: some View {
-        switch gameState {
+        switch communicationManager.gameState {
         case .holding:
             HoldingView()
         case .trivia:
-            TriviaView(communicationManager: communicationManager,
-                       question: TriviaQuestion(title: "Potato Potato Potaot",
-                                                duration: 10))
+            TriviaManagerView(group: group, communicationManager: communicationManager)
         case .clicker:
             EmptyView()
         case .flag:

@@ -11,7 +11,32 @@ import MultipeerConnectivity
 
 class CommunicationManager: ObservableObject {
     
+    @Published var gameState: GameState = .holding
+    @Published var commandInfo: [String: String] = [:]
+    
     func send(message: Messagable) {
         #warning("Rui Yang look here")
+    }
+    
+    #warning("Call this method when any Data is received.")
+    func receive(data: Data) {
+        // Filter for only communications between host Mac and iPad
+        guard let command = CommandMessage.from(data: data) else { return }
+        
+        let secondsUntilActive = abs(command.activeDate.timeIntervalSinceNow)
+        
+        Timer.scheduledTimer(withTimeInterval: secondsUntilActive,
+                             repeats: false) { [self] _ in
+            // Check if both are equal, if not, update it.
+            // This if prevents an unnecessary view refresh as, if gameState is set to the same value as before,
+            //   it will still necessitate a view refresh. Oh no run-on sentence.
+            if gameState != command.gameState {
+                gameState = command.gameState
+            }
+            
+            if commandInfo != command.commandInfo {
+                commandInfo = command.commandInfo
+            }
+        }
     }
 }

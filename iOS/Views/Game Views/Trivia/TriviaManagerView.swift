@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TriviaManagerView: View {
     
+    var group: Group
+    
     @ObservedObject var communicationManager: CommunicationManager
     
     var body: some View {
@@ -18,6 +20,6 @@ struct TriviaManagerView: View {
 
 struct TriviaManagerView_Previews: PreviewProvider {
     static var previews: some View {
-        TriviaManagerView(communicationManager: CommunicationManager())
+        TriviaManagerView(group: Group(number: 1, name: "cold chocolate"), communicationManager: CommunicationManager())
     }
 }
