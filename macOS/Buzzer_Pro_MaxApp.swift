@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Buzzer_Pro_MaxApp: App {
+struct BuzzerProMaxApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

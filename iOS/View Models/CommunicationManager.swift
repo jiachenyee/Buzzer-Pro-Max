@@ -11,7 +11,6 @@ import MultipeerConnectivity
 
 class CommunicationManager: ObservableObject {
     
-    
     func send(message: Messagable) {
         #warning("Rui Yang look here")
     }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
+		329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C027D8F3FC004C2D84 /* SetupView.swift */; };
+		329F49C527D8F8BF004C2D84 /* OpenInNewWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C227D8F888004C2D84 /* OpenInNewWindow.swift */; };
 		32C11A7027D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */; };
 		32C11A7227D7955000561F2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6127D7954F00561F2B /* ContentView.swift */; };
 		32C11A7427D7955000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A6227D7955000561F2B /* Assets.xcassets */; };
@@ -31,6 +33,9 @@
 
 /* Begin PBXFileReference section */
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
+		329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Buzzer-Pro-Max--iOS--Info.plist"; sourceTree = "<group>"; };
+		329F49C027D8F3FC004C2D84 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		329F49C227D8F888004C2D84 /* OpenInNewWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenInNewWindow.swift; sourceTree = "<group>"; };
 		32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buzzer_Pro_MaxApp.swift; sourceTree = "<group>"; };
 		32C11A6127D7954F00561F2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		32C11A6227D7955000561F2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,14 +75,24 @@
 			isa = PBXGroup;
 			children = (
 				32C11A6127D7954F00561F2B /* ContentView.swift */,
+				329F49C027D8F3FC004C2D84 /* SetupView.swift */,
 				32C11A8127D79DAB00561F2B /* TriviaView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
+		329F49BF27D8F2BD004C2D84 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		32C11A5A27D7954F00561F2B = {
 			isa = PBXGroup;
 			children = (
+				329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max--iOS--Info.plist */,
 				32C11A5F27D7954F00561F2B /* Shared */,
 				32C11A7E27D7958600561F2B /* iOS */,
 				32C11A6E27D7955000561F2B /* macOS */,
@@ -110,6 +125,7 @@
 				32C11A9B27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift */,
 				32C11A6F27D7955000561F2B /* macOS.entitlements */,
 				32C11A7F27D79B4D00561F2B /* ContentView.swift */,
+				329F49C227D8F888004C2D84 /* OpenInNewWindow.swift */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -119,7 +135,7 @@
 			children = (
 				32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */,
 				329F49BD27D8EBF8004C2D84 /* Views */,
-				329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */,
+				329F49BF27D8F2BD004C2D84 /* View Models */,
 			);
 			path = iOS;
 			sourceTree = "<group>";
@@ -162,6 +178,7 @@
 				32C11A6327D7955000561F2B /* Sources */,
 				32C11A6427D7955000561F2B /* Frameworks */,
 				32C11A6527D7955000561F2B /* Resources */,
+				329F49C427D8F8A9004C2D84 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -245,6 +262,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		329F49C427D8F8A9004C2D84 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		32C11A6327D7955000561F2B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -254,6 +291,7 @@
 				32C11AA227D854E000561F2B /* TriviaQuestion.swift in Sources */,
 				32C11A7227D7955000561F2B /* ContentView.swift in Sources */,
 				32C11A9D27D83A1900561F2B /* TriviaView.swift in Sources */,
+				329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */,
 				32C11AA427D8564700561F2B /* Messagable.swift in Sources */,
 				32C11AB127D8610700561F2B /* Sender.swift in Sources */,
 				32C11A7027D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */,
@@ -267,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329F49C527D8F8BF004C2D84 /* OpenInNewWindow.swift in Sources */,
 				32C11AB227D8610700561F2B /* Sender.swift in Sources */,
 				32C11AAC27D85F9A00561F2B /* TriviaMessage.swift in Sources */,
 				32C11A8027D79B4D00561F2B /* ContentView.swift in Sources */,
@@ -400,9 +439,10 @@
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Buzzer-Pro-Max--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -416,7 +456,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -430,9 +470,10 @@
 				DEVELOPMENT_TEAM = XL5JK4F896;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = "Buzzer-Pro-Max--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -446,7 +487,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
