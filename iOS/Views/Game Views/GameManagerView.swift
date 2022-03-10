@@ -16,7 +16,7 @@ struct GameManagerView: View {
     var body: some View {
         switch communicationManager.gameState {
         case .holding:
-            HoldingView()
+            HoldingView(group: group)
         case .trivia:
             TriviaManagerView(group: group, communicationManager: communicationManager)
         case .clicker:
