@@ -35,13 +35,16 @@ struct TriviaView: View {
                     Spacer()
                     
                     FlagView(groupNumber: 1)
-                        .frame(width: 100)
+                        .frame(width: 200)
                 }
                 
                 Spacer()
                 
                 if respondedToQuestion {
-                    Text("Buzzed!")
+                    Text("🐝 Buzzed!")
+                        .foregroundColor(.yellow)
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 90, weight: .bold))
                     
                     Spacer()
                     
@@ -62,9 +65,11 @@ struct TriviaView: View {
             .foregroundColor(.white)
         }
         .onTapGesture {
-            if respondedToQuestion {
+            if !respondedToQuestion {
                 communicationManager.send(message: TriviaBuzzerMessage(group: group, sendDate: .now))
-                respondedToQuestion = true
+                withAnimation {
+                    respondedToQuestion = true
+                }
             }
         }
     }
