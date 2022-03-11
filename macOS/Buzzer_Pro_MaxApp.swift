@@ -11,7 +11,18 @@ import SwiftUI
 struct BuzzerProMaxApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AdminPanelView()
         }
+        .handlesExternalEvents(matching: [""])
+        
+        WindowGroup {
+            LeaderboardView()
+        }
+        .handlesExternalEvents(matching: ["leaderboard"])
+        
+        WindowGroup {
+            GameView()
+        }
+        .handlesExternalEvents(matching: ["game"])
     }
 }

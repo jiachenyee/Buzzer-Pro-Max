@@ -21,6 +21,7 @@ struct BuzzerProMaxApp: App {
                     .statusBar(hidden: true)
             } else {
                 SetupView(group: $group)
+                    .statusBar(hidden: true)
             }
         }
     }

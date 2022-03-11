@@ -11,8 +11,8 @@ import MultipeerConnectivity
 
 class CommunicationManager: ObservableObject {
     
-    @Published var gameState: GameState = .holding
-    @Published var commandInfo: [String: String] = [:]
+    @Published var gameState: GameState = .trivia
+    @Published var commandInfo: [String: String] = ["questionNo":"0"]
     
     func send(message: Messagable) {
         #warning("Rui Yang look here")

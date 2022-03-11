@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
 		329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C027D8F3FC004C2D84 /* SetupView.swift */; };
-		329F49C527D8F8BF004C2D84 /* OpenInNewWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C227D8F888004C2D84 /* OpenInNewWindow.swift */; };
 		329F49C827D9083B004C2D84 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C727D9083B004C2D84 /* GameState.swift */; };
 		329F49CA27D90C3C004C2D84 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C927D90C3C004C2D84 /* Group.swift */; };
 		329F49CB27D90C44004C2D84 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C927D90C3C004C2D84 /* Group.swift */; };
@@ -22,11 +21,13 @@
 		329F49DD27D920A5004C2D84 /* Messagable+CodableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49DB27D9209F004C2D84 /* Messagable+CodableUtils.swift */; };
 		329F49DE27D920AD004C2D84 /* CommandMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49D927D91E57004C2D84 /* CommandMessage.swift */; };
 		329F49DF27D920E9004C2D84 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C727D9083B004C2D84 /* GameState.swift */; };
+		329F49E627D9F4B6004C2D84 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49E427D9F445004C2D84 /* LeaderboardView.swift */; };
+		329F49E827D9F507004C2D84 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49E727D9F507004C2D84 /* GameView.swift */; };
 		32C11A7027D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */; };
 		32C11A7227D7955000561F2B /* HoldingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A6127D7954F00561F2B /* HoldingView.swift */; };
 		32C11A7427D7955000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A6227D7955000561F2B /* Assets.xcassets */; };
 		32C11A7527D7955000561F2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32C11A6227D7955000561F2B /* Assets.xcassets */; };
-		32C11A8027D79B4D00561F2B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A7F27D79B4D00561F2B /* ContentView.swift */; };
+		32C11A8027D79B4D00561F2B /* AdminPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A7F27D79B4D00561F2B /* AdminPanelView.swift */; };
 		32C11A8627D7A10800561F2B /* TriviaQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A8527D7A10800561F2B /* TriviaQuestion.swift */; };
 		32C11A9C27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A9B27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift */; };
 		32C11A9D27D83A1900561F2B /* TriviaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11A8127D79DAB00561F2B /* TriviaView.swift */; };
@@ -47,7 +48,6 @@
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Buzzer-Pro-Max--iOS--Info.plist"; sourceTree = "<group>"; };
 		329F49C027D8F3FC004C2D84 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
-		329F49C227D8F888004C2D84 /* OpenInNewWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenInNewWindow.swift; sourceTree = "<group>"; };
 		329F49C727D9083B004C2D84 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 		329F49C927D90C3C004C2D84 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		329F49CC27D90C64004C2D84 /* Group+GroupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Group+GroupData.swift"; sourceTree = "<group>"; };
@@ -55,13 +55,16 @@
 		329F49D627D917A6004C2D84 /* TriviaManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaManagerView.swift; sourceTree = "<group>"; };
 		329F49D927D91E57004C2D84 /* CommandMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandMessage.swift; sourceTree = "<group>"; };
 		329F49DB27D9209F004C2D84 /* Messagable+CodableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Messagable+CodableUtils.swift"; sourceTree = "<group>"; };
+		329F49E327D9F3D8004C2D84 /* Buzzer-Pro-Max--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Buzzer-Pro-Max--macOS--Info.plist"; sourceTree = "<group>"; };
+		329F49E427D9F445004C2D84 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
+		329F49E727D9F507004C2D84 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buzzer_Pro_MaxApp.swift; sourceTree = "<group>"; };
 		32C11A6127D7954F00561F2B /* HoldingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldingView.swift; sourceTree = "<group>"; };
 		32C11A6227D7955000561F2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32C11A6727D7955000561F2B /* Buzzer Pro Max.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buzzer Pro Max.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C11A6D27D7955000561F2B /* Buzzer Pro Max.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Buzzer Pro Max.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		32C11A6F27D7955000561F2B /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		32C11A7F27D79B4D00561F2B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		32C11A7F27D79B4D00561F2B /* AdminPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPanelView.swift; sourceTree = "<group>"; };
 		32C11A8127D79DAB00561F2B /* TriviaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaView.swift; sourceTree = "<group>"; };
 		32C11A8527D7A10800561F2B /* TriviaQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuestion.swift; sourceTree = "<group>"; };
 		32C11A9B27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buzzer_Pro_MaxApp.swift; sourceTree = "<group>"; };
@@ -151,9 +154,20 @@
 			path = Trivia;
 			sourceTree = "<group>";
 		};
+		329F49E927D9F6EA004C2D84 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				329F49E427D9F445004C2D84 /* LeaderboardView.swift */,
+				32C11A7F27D79B4D00561F2B /* AdminPanelView.swift */,
+				329F49E727D9F507004C2D84 /* GameView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		32C11A5A27D7954F00561F2B = {
 			isa = PBXGroup;
 			children = (
+				329F49E327D9F3D8004C2D84 /* Buzzer-Pro-Max--macOS--Info.plist */,
 				329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max--iOS--Info.plist */,
 				32C11A5F27D7954F00561F2B /* Shared */,
 				32C11A7E27D7958600561F2B /* iOS */,
@@ -186,8 +200,7 @@
 			children = (
 				32C11A9B27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift */,
 				32C11A6F27D7955000561F2B /* macOS.entitlements */,
-				32C11A7F27D79B4D00561F2B /* ContentView.swift */,
-				329F49C227D8F888004C2D84 /* OpenInNewWindow.swift */,
+				329F49E927D9F6EA004C2D84 /* Views */,
 			);
 			path = macOS;
 			sourceTree = "<group>";
@@ -378,17 +391,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				329F49C527D8F8BF004C2D84 /* OpenInNewWindow.swift in Sources */,
 				32C11AB227D8610700561F2B /* Sender.swift in Sources */,
 				329F49DE27D920AD004C2D84 /* CommandMessage.swift in Sources */,
 				32C11AAC27D85F9A00561F2B /* TriviaMessage.swift in Sources */,
 				329F49CE27D90CD5004C2D84 /* Group+GroupData.swift in Sources */,
+				329F49E827D9F507004C2D84 /* GameView.swift in Sources */,
 				329F49CB27D90C44004C2D84 /* Group.swift in Sources */,
-				32C11A8027D79B4D00561F2B /* ContentView.swift in Sources */,
+				32C11A8027D79B4D00561F2B /* AdminPanelView.swift in Sources */,
 				329F49DF27D920E9004C2D84 /* GameState.swift in Sources */,
 				329F49DD27D920A5004C2D84 /* Messagable+CodableUtils.swift in Sources */,
 				32C11A9C27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift in Sources */,
 				32C11AAF27D860FD00561F2B /* iPadMessage.swift in Sources */,
+				329F49E627D9F4B6004C2D84 /* LeaderboardView.swift in Sources */,
 				32C11AA527D8564700561F2B /* Messagable.swift in Sources */,
 				32C11A8627D7A10800561F2B /* TriviaQuestion.swift in Sources */,
 				32C11A9F27D83B5800561F2B /* FlagView.swift in Sources */,
@@ -583,6 +597,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Buzzer-Pro-Max--macOS--Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -611,6 +626,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Buzzer-Pro-Max--macOS--Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
