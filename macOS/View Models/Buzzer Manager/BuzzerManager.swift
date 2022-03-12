@@ -17,8 +17,9 @@ class BuzzerManager: NSObject, ObservableObject {
     
     var peers: [MCPeerID] = []
     
+    let hostName = String(ProcessInfo.processInfo.hostName.dropLast(6))
+    
     override init() {
-        let hostName = String(ProcessInfo.processInfo.hostName.dropLast(6))
         peerID = MCPeerID(displayName: String(hostName))
         
         super.init()

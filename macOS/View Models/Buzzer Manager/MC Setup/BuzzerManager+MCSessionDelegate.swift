@@ -17,14 +17,19 @@ extension BuzzerManager: MCSessionDelegate {
                     self.peers.remove(at: index)
                 }
             }
+            
         case .connecting:
             print("Connecting to \(peerID.displayName)")
+            
         case .connected:
             if !peers.contains(peerID) {
                 DispatchQueue.main.async {
                     self.peers.insert(peerID, at: 0)
                 }
+                
+                send(message: HelloMessage(sendDate: Date(), hostName: hostName))
             }
+            
         @unknown default:
             print("Unknown state")
         }
@@ -33,8 +38,6 @@ extension BuzzerManager: MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
         if let triviaBuzzerMessage = TriviaBuzzerMessage.from(data: data) {
             print(triviaBuzzerMessage.group)
-        } else if let helloMessage = HelloMessage.from(data: data) {
-            print(helloMessage.group)
         }
     }
     

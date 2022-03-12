@@ -7,12 +7,11 @@
 
 import Foundation
 
-struct HelloMessage: iPadMessage {
-    var group: Group
-    
-    var sender: Sender
+/// `HelloMessage` is sent from the host to any device.
+struct HelloMessage: Messagable {
+    var sender: Sender = .mac
     
     var sendDate: Date
     
-    var messageID = UUID()
+    var hostName: String
 }
