@@ -13,7 +13,9 @@ extension BuzzerManager: MCSessionDelegate {
         switch state {
         case .notConnected:
             if let index = peers.firstIndex(of: peerID) {
-                peers.remove(at: index)
+                DispatchQueue.main.async {
+                    self.peers.remove(at: index)
+                }
             }
         case .connecting:
             print("Connecting to \(peerID.displayName)")
