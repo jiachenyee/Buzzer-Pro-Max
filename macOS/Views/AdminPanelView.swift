@@ -34,10 +34,8 @@ struct AdminPanelView: View {
         .onAppear {
             Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { _ in
                 let windows = NSApplication.shared.windows
-                for window in windows {
-                    if window.titleVisibility == .hidden {
-                        window.close()
-                    }
+                for window in windows where window.titleVisibility == .hidden {
+                    window.close()
                 }
             }
         }

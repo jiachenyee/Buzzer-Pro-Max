@@ -25,7 +25,6 @@ extension BuzzerManager {
                                                         discoveryInfo: nil,
                                                         serviceType: MCConstants.service)
         
-        
         advertiserAssistant?.delegate = self
         
         advertiserAssistant?.startAdvertisingPeer()

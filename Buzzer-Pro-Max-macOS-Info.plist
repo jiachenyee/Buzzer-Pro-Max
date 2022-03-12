@@ -15,5 +15,10 @@
 	</array>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>Buzzer Pro Max needs your network to start sessions</string>
+	<key>NSBonjourServices</key>
+	<array>
+		<string>_sg-tk-buzzer._tcp</string>
+		<string>_sg-tk-buzzer._udp</string>
+	</array>
 </dict>
 </plist>

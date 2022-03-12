@@ -15,6 +15,8 @@ struct SetupView: View {
     
     @State var groupName: String = "cold chocolate"
     
+    @ObservedObject var communicationManager: CommunicationManager
+    
     var body: some View {
         ZStack {
             Color.black
@@ -40,6 +42,8 @@ struct SetupView: View {
                 
                 Button("Go") {
                     group = Group.all.first { $0.name == groupName }
+                    
+                    communicationManager.join(with: group!)
                 }
                 .buttonStyle(.bordered)
                 .padding()
@@ -50,6 +54,6 @@ struct SetupView: View {
 
 struct SetupView_Previews: PreviewProvider {
     static var previews: some View {
-        SetupView(group: .constant(Group(number: 1, name: "cold chocolate")))
+        SetupView(group: .constant(Group(number: 1, name: "cold chocolate")), communicationManager: CommunicationManager())
     }
 }

@@ -16,11 +16,11 @@ struct BuzzerProMaxApp: App {
     
     var body: some Scene {
         WindowGroup {
-            if let group = group {
+            if let group = group, communicationManager.isConnected {
                 GameManagerView(group: group, communicationManager: communicationManager)
                     .statusBar(hidden: true)
             } else {
-                SetupView(group: $group)
+                SetupView(group: $group, communicationManager: communicationManager)
                     .statusBar(hidden: true)
             }
         }
