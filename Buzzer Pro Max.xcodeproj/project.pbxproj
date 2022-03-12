@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		325C981E27DC4EEA00B7F3A6 /* BuzzerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C981C27DC4EE700B7F3A6 /* BuzzerManager.swift */; };
+		325C982027DC4F9800B7F3A6 /* HelloMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C981F27DC4F9800B7F3A6 /* HelloMessage.swift */; };
+		325C982127DC4FBD00B7F3A6 /* HelloMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C981F27DC4F9800B7F3A6 /* HelloMessage.swift */; };
 		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
 		329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C027D8F3FC004C2D84 /* SetupView.swift */; };
 		329F49C827D9083B004C2D84 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C727D9083B004C2D84 /* GameState.swift */; };
@@ -45,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		325C981C27DC4EE700B7F3A6 /* BuzzerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzerManager.swift; sourceTree = "<group>"; };
+		325C981F27DC4F9800B7F3A6 /* HelloMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloMessage.swift; sourceTree = "<group>"; };
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Buzzer-Pro-Max--iOS--Info.plist"; sourceTree = "<group>"; };
 		329F49C027D8F3FC004C2D84 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -93,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		325C981B27DC4EDE00B7F3A6 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				325C981C27DC4EE700B7F3A6 /* BuzzerManager.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
 		329F49BD27D8EBF8004C2D84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +213,7 @@
 			children = (
 				32C11A9B27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift */,
 				32C11A6F27D7955000561F2B /* macOS.entitlements */,
+				325C981B27DC4EDE00B7F3A6 /* View Models */,
 				329F49E927D9F6EA004C2D84 /* Views */,
 			);
 			path = macOS;
@@ -241,6 +255,7 @@
 				329F49DB27D9209F004C2D84 /* Messagable+CodableUtils.swift */,
 				32C11AB027D8610700561F2B /* Sender.swift */,
 				32C11AAD27D860FD00561F2B /* iPadMessage.swift */,
+				325C981F27DC4F9800B7F3A6 /* HelloMessage.swift */,
 				329F49D927D91E57004C2D84 /* CommandMessage.swift */,
 				32C11AAA27D85F9A00561F2B /* TriviaMessage.swift */,
 			);
@@ -383,6 +398,7 @@
 				329F49D027D91210004C2D84 /* GameManagerView.swift in Sources */,
 				32C11AA027D83DD700561F2B /* FlagView.swift in Sources */,
 				32C11AAE27D860FD00561F2B /* iPadMessage.swift in Sources */,
+				325C982027DC4F9800B7F3A6 /* HelloMessage.swift in Sources */,
 				329F49DA27D91E57004C2D84 /* CommandMessage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,9 +415,11 @@
 				329F49CB27D90C44004C2D84 /* Group.swift in Sources */,
 				32C11A8027D79B4D00561F2B /* AdminPanelView.swift in Sources */,
 				329F49DF27D920E9004C2D84 /* GameState.swift in Sources */,
+				325C982127DC4FBD00B7F3A6 /* HelloMessage.swift in Sources */,
 				329F49DD27D920A5004C2D84 /* Messagable+CodableUtils.swift in Sources */,
 				32C11A9C27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift in Sources */,
 				32C11AAF27D860FD00561F2B /* iPadMessage.swift in Sources */,
+				325C981E27DC4EEA00B7F3A6 /* BuzzerManager.swift in Sources */,
 				329F49E627D9F4B6004C2D84 /* LeaderboardView.swift in Sources */,
 				32C11AA527D8564700561F2B /* Messagable.swift in Sources */,
 				32C11A8627D7A10800561F2B /* TriviaQuestion.swift in Sources */,

@@ -8,7 +8,7 @@
 import Foundation
 
 extension Group {
-    static let groups = [
+    static let all = [
         Group(number: 1, name: "cold chocolate"),
         Group(number: 2, name: "swift at swift"),
         Group(number: 3, name: "swifters"),

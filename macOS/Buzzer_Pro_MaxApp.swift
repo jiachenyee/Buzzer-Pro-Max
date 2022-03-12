@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct BuzzerProMaxApp: App {
+    
+    @StateObject var buzzerManager = BuzzerManager()
+    
     var body: some Scene {
         WindowGroup {
             AdminPanelView()

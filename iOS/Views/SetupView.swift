@@ -32,14 +32,14 @@ struct SetupView: View {
                     .padding()
                 
                 Picker("Groups", selection: $groupName) {
-                    ForEach(Group.groups) { group in
+                    ForEach(Group.all) { group in
                         Text("\(group.number)-\(group.name)")
                             .tag(group.name)
                     }
                 }
                 
                 Button("Go") {
-                    group = Group.groups.first { $0.name == groupName }
+                    group = Group.all.first { $0.name == groupName }
                 }
                 .buttonStyle(.bordered)
                 .padding()
