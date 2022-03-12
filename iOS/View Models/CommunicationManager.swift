@@ -33,19 +33,30 @@ class CommunicationManager: NSObject, ObservableObject {
         // Filter for only communications between host Mac and iPad
         guard let command = CommandMessage.from(data: data) else { return }
         
-        let secondsUntilActive = abs(command.activeDate.timeIntervalSinceNow)
+        let activeTime = command.activeDate.timeIntervalSinceNow
+        let secondsUntilActive = activeTime > 0 ? activeTime : 0
         
-        Timer.scheduledTimer(withTimeInterval: secondsUntilActive,
-                             repeats: false) { [self] _ in
-            // Check if both are equal, if not, update it.
-            // This if prevents an unnecessary view refresh as, if gameState is set to the same value as before,
-            //   it will still necessitate a view refresh. Oh no run-on sentence.
-            if gameState != command.gameState {
-                gameState = command.gameState
+        let action = { [self] in
+            DispatchQueue.main.async {
+                // Check if both are equal, if not, update it.
+                // This if prevents an unnecessary view refresh as, if gameState is set to the same value as before,
+                //   it will still necessitate a view refresh. Oh no run-on sentence.
+                if gameState != command.gameState {
+                    gameState = command.gameState
+                }
+                
+                if commandInfo != command.commandInfo {
+                    commandInfo = command.commandInfo
+                }
             }
-            
-            if commandInfo != command.commandInfo {
-                commandInfo = command.commandInfo
+        }
+        
+        if secondsUntilActive == 0 {
+            action()
+        } else {
+            Timer.scheduledTimer(withTimeInterval: secondsUntilActive,
+                                 repeats: false) { _ in
+                action()
             }
         }
     }
@@ -93,6 +104,8 @@ extension CommunicationManager: MCSessionDelegate {
                     self.isConnected = true
                 }
             }
+        } else {
+            receive(data: data)
         }
     }
     

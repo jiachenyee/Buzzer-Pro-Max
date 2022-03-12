@@ -28,5 +28,7 @@ extension BuzzerManager {
         advertiserAssistant?.delegate = self
         
         advertiserAssistant?.startAdvertisingPeer()
+        
+        isSessionActive = true
     }
 }

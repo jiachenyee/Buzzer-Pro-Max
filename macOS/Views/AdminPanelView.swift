@@ -12,22 +12,35 @@ struct AdminPanelView: View {
     @ObservedObject var buzzerManager: BuzzerManager
     
     @State var loaded = false
+    @State var launchedWindows = false
     
     var body: some View {
         ZStack {
             Color.black
             VStack {
-                Text("Admin Panel")
-                Button {
-                    buzzerManager.startHost()
-                } label: {
-                    Text("Start")
-                }
-                Button {
-                    NSWorkspace.shared.open(URL(string: "buzzerpromax://leaderboard")!)
-                    NSWorkspace.shared.open(URL(string: "buzzerpromax://game")!)
-                } label: {
-                    Text("Launch Windows")
+                if !launchedWindows {
+                    if !buzzerManager.isSessionActive {
+                        Button {
+                            buzzerManager.startHost()
+                        } label: {
+                            Text("Start")
+                        }
+                    } else {
+                        Button {
+                            NSWorkspace.shared.open(URL(string: "buzzerpromax://leaderboard")!)
+                            NSWorkspace.shared.open(URL(string: "buzzerpromax://game")!)
+                            
+                            launchedWindows = true
+                        } label: {
+                            Text("Launch Windows")
+                        }
+                    }
+                } else {
+                    Button {
+                        buzzerManager.send(message: CommandMessage(sendDate: Date(), activeDate: Date(), gameState: .holding, commandInfo: [:]))
+                    } label: {
+                        Text("Holding")
+                    }
                 }
             }
         }
