@@ -13,6 +13,7 @@ struct LeaderboardView: View {
             Color.black
             Text("Leaderboard")
         }
+        .navigationTitle("Leaderboard")
     }
 }
 

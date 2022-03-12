@@ -13,6 +13,7 @@ struct GameView: View {
             Color.black
             Text("Actual game")
         }
+        .navigationTitle("Game")
     }
 }
 

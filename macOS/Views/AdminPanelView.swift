@@ -47,6 +47,7 @@ struct AdminPanelView: View {
                 }
             }
         }
+        .navigationTitle("Admin")
         .onAppear {
             Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { _ in
                 let windows = NSApplication.shared.windows
