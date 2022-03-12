@@ -50,6 +50,7 @@
 /* Begin PBXFileReference section */
 		325C981C27DC4EE700B7F3A6 /* BuzzerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuzzerManager.swift; sourceTree = "<group>"; };
 		325C981F27DC4F9800B7F3A6 /* HelloMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloMessage.swift; sourceTree = "<group>"; };
+		325C982227DC63B200B7F3A6 /* Buzzer Pro Max (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Buzzer Pro Max (iOS).entitlements"; sourceTree = "<group>"; };
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Buzzer-Pro-Max--iOS--Info.plist"; sourceTree = "<group>"; };
 		329F49C027D8F3FC004C2D84 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -180,6 +181,7 @@
 		32C11A5A27D7954F00561F2B = {
 			isa = PBXGroup;
 			children = (
+				325C982227DC63B200B7F3A6 /* Buzzer Pro Max (iOS).entitlements */,
 				329F49E327D9F3D8004C2D84 /* Buzzer-Pro-Max--macOS--Info.plist */,
 				329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max--iOS--Info.plist */,
 				32C11A5F27D7954F00561F2B /* Shared */,
@@ -544,6 +546,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Buzzer Pro Max (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XL5JK4F896;
@@ -553,8 +556,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -575,6 +579,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Buzzer Pro Max (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XL5JK4F896;
@@ -584,8 +589,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
