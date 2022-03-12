@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol iPadMessage: Messagable {
+protocol iPadMessage: Messagable, Codable {
     var group: Group { get set }
 }

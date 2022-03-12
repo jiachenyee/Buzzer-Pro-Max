@@ -14,18 +14,20 @@ struct BuzzerProMaxApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AdminPanelView()
+            AdminPanelView(buzzerManager: buzzerManager)
         }
         .handlesExternalEvents(matching: [""])
         
         WindowGroup {
             LeaderboardView()
         }
+        .windowStyle(.hiddenTitleBar)
         .handlesExternalEvents(matching: ["leaderboard"])
         
         WindowGroup {
             GameView()
         }
+        .windowStyle(.hiddenTitleBar)
         .handlesExternalEvents(matching: ["game"])
     }
 }
