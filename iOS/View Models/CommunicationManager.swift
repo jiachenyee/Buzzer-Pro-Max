@@ -51,7 +51,7 @@ class CommunicationManager: NSObject, ObservableObject {
             }
         }
         
-        if secondsUntilActive == 0 {
+        if secondsUntilActive <= 0.5 {
             action()
         } else {
             Timer.scheduledTimer(withTimeInterval: secondsUntilActive,
