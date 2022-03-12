@@ -18,11 +18,17 @@ class CommunicationManager: NSObject, ObservableObject {
     
     var session: MCSession?
     
+    var hostPeerID: MCPeerID?
+    var peerID: MCPeerID?
+    
     func send(message: Messagable) {
-        #warning("Rui Yang look here")
+        if let session = session,
+           let data = message.toJSONData(),
+           let hostPeerID = hostPeerID {
+            try? session.send(data, toPeers: [hostPeerID], with: .reliable)
+        }
     }
     
-    #warning("Call this method when any Data is received.")
     func receive(data: Data) {
         // Filter for only communications between host Mac and iPad
         guard let command = CommandMessage.from(data: data) else { return }
@@ -45,8 +51,10 @@ class CommunicationManager: NSObject, ObservableObject {
     }
     
     func join(with group: Group) {
-        session = MCSession(peer: MCPeerID(displayName: String(group.number)),
-                            securityIdentity: nil, encryptionPreference: .none)
+        peerID = MCPeerID(displayName: String(group.number))
+        session = MCSession(peer: peerID!,
+                            securityIdentity: nil,
+                            encryptionPreference: .none)
         
         session?.delegate = self
         
@@ -63,9 +71,7 @@ class CommunicationManager: NSObject, ObservableObject {
 
 extension CommunicationManager: MCBrowserViewControllerDelegate {
     func browserViewControllerDidFinish(_ browserViewController: MCBrowserViewController) {
-        browserViewController.dismiss(animated: true) {
-            self.isConnected = true
-        }
+        browserViewController.dismiss(animated: true)
     }
     
     func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
@@ -80,7 +86,14 @@ extension CommunicationManager: MCSessionDelegate {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        print("POTAOT")
+        if let hello = HelloMessage.from(data: data) {
+            if let host = session.connectedPeers.first(where: { $0.displayName == hello.hostName }) {
+                hostPeerID = host
+                DispatchQueue.main.async {
+                    self.isConnected = true
+                }
+            }
+        }
     }
     
     // MARK: - Unused Required Functions

@@ -9,8 +9,6 @@ import SwiftUI
 
 struct SetupView: View {
     
-    #warning("Any pairing work should be done here.")
-    
     @Binding var group: Group?
     
     @State var groupName: String = "cold chocolate"
@@ -54,6 +52,7 @@ struct SetupView: View {
 
 struct SetupView_Previews: PreviewProvider {
     static var previews: some View {
-        SetupView(group: .constant(Group(number: 1, name: "cold chocolate")), communicationManager: CommunicationManager())
+        SetupView(group: .constant(Group(number: 1, name: "cold chocolate")),
+                  communicationManager: CommunicationManager())
     }
 }

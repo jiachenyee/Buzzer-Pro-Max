@@ -8,5 +8,5 @@
 import Foundation
 
 enum MCConstants {
-    static let service = "sg-tk-buzzer" // boujour limit: 15 char
+    static let service = "sg-tk-buzzer" // bonjour limit: 15 char
 }
