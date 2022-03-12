@@ -13,5 +13,7 @@
 			</array>
 		</dict>
 	</array>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Buzzer Pro Max needs your network to start sessions</string>
 </dict>
 </plist>

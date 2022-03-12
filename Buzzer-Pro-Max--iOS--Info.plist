@@ -9,7 +9,9 @@
 	</dict>
 	<key>UIStatusBarHidden~ipad</key>
 	<true/>
-    <key>UIUserInterfaceStyle</key>
-    <string>Light</string>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Buzzer Pro Max needs your network to start sessions</string>
 </dict>
 </plist>
