@@ -16,6 +16,7 @@
 		325C982B27DC742600B7F3A6 /* BuzzerManager+MCNearbyServiceAdvertiserDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C982A27DC742600B7F3A6 /* BuzzerManager+MCNearbyServiceAdvertiserDelegate.swift */; };
 		325C982D27DC7CBA00B7F3A6 /* BuzzerManager+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C982C27DC7CBA00B7F3A6 /* BuzzerManager+Networking.swift */; };
 		325C983327DC8E4900B7F3A6 /* UIApplication+KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C983127DC8E4400B7F3A6 /* UIApplication+KeyWindow.swift */; };
+		325C983727DCB47400B7F3A6 /* GroupScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C983627DCB47400B7F3A6 /* GroupScore.swift */; };
 		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
 		329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C027D8F3FC004C2D84 /* SetupView.swift */; };
 		329F49C827D9083B004C2D84 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C727D9083B004C2D84 /* GameState.swift */; };
@@ -62,6 +63,7 @@
 		325C982A27DC742600B7F3A6 /* BuzzerManager+MCNearbyServiceAdvertiserDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuzzerManager+MCNearbyServiceAdvertiserDelegate.swift"; sourceTree = "<group>"; };
 		325C982C27DC7CBA00B7F3A6 /* BuzzerManager+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuzzerManager+Networking.swift"; sourceTree = "<group>"; };
 		325C983127DC8E4400B7F3A6 /* UIApplication+KeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+KeyWindow.swift"; sourceTree = "<group>"; };
+		325C983627DCB47400B7F3A6 /* GroupScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupScore.swift; sourceTree = "<group>"; };
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Buzzer-Pro-Max-iOS-Info.plist"; sourceTree = "<group>"; };
 		329F49C027D8F3FC004C2D84 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -151,6 +153,14 @@
 				325C983127DC8E4400B7F3A6 /* UIApplication+KeyWindow.swift */,
 			);
 			path = "Helper Methods";
+			sourceTree = "<group>";
+		};
+		325C983527DCB46B00B7F3A6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				325C983627DCB47400B7F3A6 /* GroupScore.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		329F49BD27D8EBF8004C2D84 /* Views */ = {
@@ -262,6 +272,7 @@
 			children = (
 				32C11A9B27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift */,
 				32C11A6F27D7955000561F2B /* macOS.entitlements */,
+				325C983527DCB46B00B7F3A6 /* Models */,
 				325C981B27DC4EDE00B7F3A6 /* View Models */,
 				329F49E927D9F6EA004C2D84 /* Views */,
 			);
@@ -487,6 +498,7 @@
 				329F49CE27D90CD5004C2D84 /* Group+GroupData.swift in Sources */,
 				325C982D27DC7CBA00B7F3A6 /* BuzzerManager+Networking.swift in Sources */,
 				329F49E827D9F507004C2D84 /* GameView.swift in Sources */,
+				325C983727DCB47400B7F3A6 /* GroupScore.swift in Sources */,
 				329F49CB27D90C44004C2D84 /* Group.swift in Sources */,
 				32C11A8027D79B4D00561F2B /* AdminPanelView.swift in Sources */,
 				329F49DF27D920E9004C2D84 /* GameState.swift in Sources */,

@@ -25,6 +25,12 @@ extension BuzzerManager: MCSessionDelegate {
             if !peers.contains(peerID) {
                 DispatchQueue.main.async {
                     self.peers.insert(peerID, at: 0)
+                    
+                    if let groupNumber = Int(peerID.displayName),
+                        let group = Group.all.first(where: { $0.number == groupNumber }) {
+                        
+                        self.groupScores.append(GroupScore(group: group, score: 0))
+                    }
                 }
                 
                 send(message: HelloMessage(sendDate: Date(), hostName: hostName))

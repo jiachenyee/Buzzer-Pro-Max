@@ -11,6 +11,7 @@ import MultipeerConnectivity
 class BuzzerManager: NSObject, ObservableObject {
     
     @Published var isSessionActive = false
+    @Published var groupScores: [GroupScore] = []
     
     var session: MCSession?
     var advertiserAssistant: MCNearbyServiceAdvertiser?

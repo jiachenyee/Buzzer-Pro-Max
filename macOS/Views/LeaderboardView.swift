@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct LeaderboardView: View {
+    
+    var groupScores: [GroupScore]
+    
     var body: some View {
         ZStack {
             Color.black
-            Text("Leaderboard")
+            HStack {
+                ForEach(groupScores, id: \.group) { groupScore in
+                    FlagView(groupNumber: groupScore.group.number)
+                }
+            }
         }
         .navigationTitle("Leaderboard")
     }
@@ -19,6 +26,6 @@ struct LeaderboardView: View {
 
 struct LeaderboardView_Previews: PreviewProvider {
     static var previews: some View {
-        LeaderboardView()
+        LeaderboardView(groupScores: [])
     }
 }

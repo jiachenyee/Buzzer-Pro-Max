@@ -19,7 +19,7 @@ struct BuzzerProMaxApp: App {
         .handlesExternalEvents(matching: [""])
         
         WindowGroup {
-            LeaderboardView()
+            LeaderboardView(groupScores: buzzerManager.groupScores)
         }
         .windowStyle(.hiddenTitleBar)
         .handlesExternalEvents(matching: ["leaderboard"])
