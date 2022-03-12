@@ -37,7 +37,10 @@ struct AdminPanelView: View {
                     }
                 } else {
                     Button {
-                        buzzerManager.send(message: CommandMessage(sendDate: Date(), activeDate: Date(), gameState: .holding, commandInfo: [:]))
+                        buzzerManager.send(message: CommandMessage(sendDate: Date(),
+                                                                   activeDate: Date(),
+                                                                   gameState: .holding,
+                                                                   commandInfo: [:]))
                     } label: {
                         Text("Holding")
                     }
