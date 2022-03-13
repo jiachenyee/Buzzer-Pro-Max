@@ -13,6 +13,8 @@ class BuzzerManager: NSObject, ObservableObject {
     @Published var isSessionActive = false
     @Published var groupScores: [GroupScore] = []
     
+    @Published var logs = ""
+    
     var session: MCSession?
     var advertiserAssistant: MCNearbyServiceAdvertiser?
     
@@ -27,5 +29,16 @@ class BuzzerManager: NSObject, ObservableObject {
         peerID = MCPeerID(displayName: String(hostName))
         
         super.init()
+    }
+    
+    func addLog(emoji: String, message: String) {
+        let date = Date().ISO8601Format(.init(dateSeparator: .dash,
+                                              dateTimeSeparator: .standard,
+                                              timeSeparator: .colon,
+                                              timeZoneSeparator: .colon,
+                                              includingFractionalSeconds: true,
+                                              timeZone: .current))
+        
+        logs = "\(emoji) \(date) \(message)\n" + logs
     }
 }

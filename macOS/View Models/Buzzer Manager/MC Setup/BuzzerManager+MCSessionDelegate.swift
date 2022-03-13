@@ -13,17 +13,20 @@ extension BuzzerManager: MCSessionDelegate {
         switch state {
         case .notConnected:
             if let index = peers.firstIndex(of: peerID) {
-                DispatchQueue.main.async {
-                    self.peers.remove(at: index)
+                DispatchQueue.main.async { [self] in
+                    peers.remove(at: index)
+                    addLog(emoji: "💔", message: "Disconnected from Group \(peerID.displayName)")
                 }
             }
-            
         case .connecting:
             print("Connecting to \(peerID.displayName)")
+            DispatchQueue.main.async { [self] in
+                addLog(emoji: "🔗", message: "Connecting to Group \(peerID.displayName)")
+            }
             
         case .connected:
             if !peers.contains(peerID) {
-                DispatchQueue.main.async {
+                DispatchQueue.main.async { [self] in
                     self.peers.insert(peerID, at: 0)
                     
                     if let groupNumber = Int(peerID.displayName),
@@ -31,11 +34,12 @@ extension BuzzerManager: MCSessionDelegate {
                         
                         self.groupScores.append(GroupScore(group: group, score: 0))
                     }
+                    
+                    addLog(emoji: "✅", message: "Connected to Group \(peerID.displayName)")
                 }
                 
                 send(message: HelloMessage(sendDate: Date(), hostName: hostName))
             }
-            
         @unknown default:
             print("Unknown state")
         }

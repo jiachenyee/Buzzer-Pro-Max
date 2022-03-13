@@ -36,13 +36,22 @@ struct AdminPanelView: View {
                         }
                     }
                 } else {
-                    Button {
-                        buzzerManager.send(message: CommandMessage(sendDate: Date(),
-                                                                   activeDate: Date(),
-                                                                   gameState: .holding,
-                                                                   commandInfo: [:]))
-                    } label: {
-                        Text("Holding")
+                    
+                    HStack {
+                        VStack {
+                            Text("Logs")
+                            TextEditor(text: $buzzerManager.logs)
+                                .font(.system(size: 16, weight: .regular, design: .monospaced))
+                        }
+                        
+                        Button {
+                            buzzerManager.send(message: CommandMessage(sendDate: Date(),
+                                                                       activeDate: Date(),
+                                                                       gameState: .holding,
+                                                                       commandInfo: [:]))
+                        } label: {
+                            Text("Holding")
+                        }
                     }
                 }
             }
