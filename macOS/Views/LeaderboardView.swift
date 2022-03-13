@@ -28,6 +28,7 @@ struct LeaderboardView: View {
                             
                             FlagView(groupNumber: groupScore.group.number)
                                 .frame(width: 250)
+                                .offset(y: groupScore.score / 2.5)
                         }
                         
                         Text("\(Int(groupScore.score.rounded()))")
