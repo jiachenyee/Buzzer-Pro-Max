@@ -13,7 +13,7 @@ struct ClickerView: View {
     
     var body: some View {
         
-        let blueTeam = Team(groups:  [
+        let blueTeam = Team(groups: [
             Group(number: 1, name: "cold choc"),
             Group(number: 2, name: "swift at swift"),
             Group(number: 3, name: "swifters")
@@ -70,25 +70,36 @@ struct ClickerView: View {
                 ZStack {
                     Rectangle()
                         .fill(Color("Team1"))
+                    
+                    let effectiveRedScore = redTeam.score <= 0 ? 0.1 : redTeam.score
+                    let effectiveBlueScore = blueTeam.score <= 0 ? 0.1 : blueTeam.score
+                    
                     Rectangle()
                         .fill(Color("Team2"))
-                        .scaleEffect(x: (redTeam.score / blueTeam.score) / 2, anchor: .trailing)
+                        .scaleEffect(x: effectiveRedScore / (effectiveRedScore + effectiveBlueScore), anchor: .trailing)
+                    
                     
                     HStack {
-                        VStack(alignment: .trailing, spacing: 32) {
+                        VStack(alignment: .trailing, spacing: 16) {
                             ForEach(blueTeam.groups, id: \.number) { group in
                                 FlagView(groupNumber: group.number)
                             }
                         }
                         Spacer()
-                        VStack(alignment: .trailing, spacing: 32) {
+                        VStack(alignment: .trailing, spacing: 16) {
                             ForEach(redTeam.groups, id: \.number) { group in
                                 FlagView(groupNumber: group.number)
                             }
                         }
                     }
                     .padding()
+                    
+                    Rectangle()
+                        .frame(width: 20)
+                        .padding(.vertical, -40)
+
                 }
+                .padding(.vertical, 40)
             }
             .padding(32)
         }
