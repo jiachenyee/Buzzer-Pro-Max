@@ -24,6 +24,9 @@
 		325C984727DDADC600B7F3A6 /* BouncyYJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984627DDADC600B7F3A6 /* BouncyYJ.swift */; };
 		325C985027DDC59500B7F3A6 /* PictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984F27DDC59500B7F3A6 /* PictionaryView.swift */; };
 		325C985627DDC76F00B7F3A6 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C985527DDC76F00B7F3A6 /* CanvasView.swift */; };
+		325C985827DE4E8D00B7F3A6 /* CentralControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C985727DE4E8D00B7F3A6 /* CentralControlView.swift */; };
+		325C985A27DE4E9E00B7F3A6 /* GameControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C985927DE4E9E00B7F3A6 /* GameControlView.swift */; };
+		325C985D27DE51E900B7F3A6 /* CentralControlPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C985C27DE51E900B7F3A6 /* CentralControlPointsView.swift */; };
 		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
 		329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C027D8F3FC004C2D84 /* SetupView.swift */; };
 		329F49C827D9083B004C2D84 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C727D9083B004C2D84 /* GameState.swift */; };
@@ -77,6 +80,9 @@
 		325C984627DDADC600B7F3A6 /* BouncyYJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyYJ.swift; sourceTree = "<group>"; };
 		325C984F27DDC59500B7F3A6 /* PictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictionaryView.swift; sourceTree = "<group>"; };
 		325C985527DDC76F00B7F3A6 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		325C985727DE4E8D00B7F3A6 /* CentralControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralControlView.swift; sourceTree = "<group>"; };
+		325C985927DE4E9E00B7F3A6 /* GameControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControlView.swift; sourceTree = "<group>"; };
+		325C985C27DE51E900B7F3A6 /* CentralControlPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralControlPointsView.swift; sourceTree = "<group>"; };
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Buzzer-Pro-Max-iOS-Info.plist"; sourceTree = "<group>"; };
 		329F49C027D8F3FC004C2D84 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -232,6 +238,17 @@
 			path = Pictionary;
 			sourceTree = "<group>";
 		};
+		325C985B27DE4F1C00B7F3A6 /* Admin Window */ = {
+			isa = PBXGroup;
+			children = (
+				32C11A7F27D79B4D00561F2B /* AdminPanelView.swift */,
+				325C985727DE4E8D00B7F3A6 /* CentralControlView.swift */,
+				325C985C27DE51E900B7F3A6 /* CentralControlPointsView.swift */,
+				325C985927DE4E9E00B7F3A6 /* GameControlView.swift */,
+			);
+			path = "Admin Window";
+			sourceTree = "<group>";
+		};
 		329F49BD27D8EBF8004C2D84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				329F49E427D9F445004C2D84 /* LeaderboardView.swift */,
-				32C11A7F27D79B4D00561F2B /* AdminPanelView.swift */,
+				325C985B27DE4F1C00B7F3A6 /* Admin Window */,
 				329F49E727D9F507004C2D84 /* GameView.swift */,
 			);
 			path = Views;
@@ -563,6 +580,7 @@
 				329F49CE27D90CD5004C2D84 /* Group+GroupData.swift in Sources */,
 				325C982D27DC7CBA00B7F3A6 /* BuzzerManager+Networking.swift in Sources */,
 				329F49E827D9F507004C2D84 /* GameView.swift in Sources */,
+				325C985827DE4E8D00B7F3A6 /* CentralControlView.swift in Sources */,
 				325C983727DCB47400B7F3A6 /* GroupScore.swift in Sources */,
 				329F49CB27D90C44004C2D84 /* Group.swift in Sources */,
 				32C11A8027D79B4D00561F2B /* AdminPanelView.swift in Sources */,
@@ -572,12 +590,14 @@
 				329F49DD27D920A5004C2D84 /* Messagable+CodableUtils.swift in Sources */,
 				32C11A9C27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift in Sources */,
 				32C11AAF27D860FD00561F2B /* iPadMessage.swift in Sources */,
+				325C985A27DE4E9E00B7F3A6 /* GameControlView.swift in Sources */,
 				325C981E27DC4EEA00B7F3A6 /* BuzzerManager.swift in Sources */,
 				329F49E627D9F4B6004C2D84 /* LeaderboardView.swift in Sources */,
 				32C11AA527D8564700561F2B /* Messagable.swift in Sources */,
 				32C11A8627D7A10800561F2B /* TriviaQuestion.swift in Sources */,
 				325C982B27DC742600B7F3A6 /* BuzzerManager+MCNearbyServiceAdvertiserDelegate.swift in Sources */,
 				32C11A9F27D83B5800561F2B /* FlagView.swift in Sources */,
+				325C985D27DE51E900B7F3A6 /* CentralControlPointsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

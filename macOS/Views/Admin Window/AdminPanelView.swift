@@ -38,20 +38,23 @@ struct AdminPanelView: View {
                 } else {
                     
                     HStack {
+                        
+                        VStack {
+                            GameControlView(buzzerManager: buzzerManager)
+                                .frame(maxHeight: .infinity)
+                            CentralControlView(buzzerManager: buzzerManager)
+                                .frame(height: 400)
+                        }
+                        .frame(maxWidth: .infinity)
+                        
                         VStack {
                             Text("Logs")
+                                .font(.system(size: 24, weight: .bold))
+                                .padding()
                             TextEditor(text: $buzzerManager.logs)
-                                .font(.system(size: 16, weight: .regular, design: .monospaced))
+                                .font(.system(size: 24, weight: .regular, design: .monospaced))
                         }
-                        
-                        Button {
-                            buzzerManager.send(message: CommandMessage(sendDate: Date(),
-                                                                       activeDate: Date(),
-                                                                       gameState: .holding,
-                                                                       commandInfo: [:]))
-                        } label: {
-                            Text("Holding")
-                        }
+                        .frame(width: 500)
                     }
                 }
             }
