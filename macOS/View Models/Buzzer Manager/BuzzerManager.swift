@@ -13,6 +13,8 @@ class BuzzerManager: NSObject, ObservableObject {
     @Published var isSessionActive = false
     @Published var groupScores: [GroupScore] = []
     
+    @Published var gameState: GameState = .holding
+    
     @Published var logs = ""
     
     var session: MCSession?
