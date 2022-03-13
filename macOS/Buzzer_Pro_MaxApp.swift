@@ -36,7 +36,7 @@ struct BuzzerProMaxApp: App {
                     .resizable()
                     .scaledToFill()
             } else {
-                GameView()
+                GameView(buzzerManager: buzzerManager)
             }
         }
         .windowStyle(.hiddenTitleBar)

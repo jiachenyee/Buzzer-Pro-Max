@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct GameView: View {
+    
+    @ObservedObject var buzzerManager: BuzzerManager
+    
     var body: some View {
         ZStack {
             Color.black
+            
+            TriviaManagerView(buzzerManager: buzzerManager)
             TriviaQuestionView(triviaQuestion: TriviaQuestion(
                 title: "Name one iPhone from every year in chronological order",
                 duration: 30))
@@ -23,6 +28,6 @@ struct GameView: View {
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {
-        GameView()
+        GameView(buzzerManager: BuzzerManager())
     }
 }

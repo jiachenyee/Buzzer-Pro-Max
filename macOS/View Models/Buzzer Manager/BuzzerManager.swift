@@ -42,6 +42,8 @@ class BuzzerManager: NSObject, ObservableObject {
     
     @Published var logs = ""
     
+    @Published var gameInfo: [String: String] = [:]
+    
     var session: MCSession?
     var advertiserAssistant: MCNearbyServiceAdvertiser?
     
