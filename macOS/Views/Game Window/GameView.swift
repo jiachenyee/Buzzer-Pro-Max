@@ -15,7 +15,12 @@ struct GameView: View {
         ZStack {
             Color.black
             
-            TriviaManagerView(buzzerManager: buzzerManager)
+            switch buzzerManager.gameState {
+            case .holding: EmptyView() // briefing
+            case .trivia: TriviaManagerView(buzzerManager: buzzerManager)
+            case .clicker: EmptyView()
+            case .sketches: EmptyView() 
+            }
         }
         .navigationTitle("Game")
         .edgesIgnoringSafeArea(.all)
