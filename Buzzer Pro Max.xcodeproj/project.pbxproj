@@ -17,6 +17,9 @@
 		325C982D27DC7CBA00B7F3A6 /* BuzzerManager+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C982C27DC7CBA00B7F3A6 /* BuzzerManager+Networking.swift */; };
 		325C983327DC8E4900B7F3A6 /* UIApplication+KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C983127DC8E4400B7F3A6 /* UIApplication+KeyWindow.swift */; };
 		325C983727DCB47400B7F3A6 /* GroupScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C983627DCB47400B7F3A6 /* GroupScore.swift */; };
+		325C983A27DDA53C00B7F3A6 /* ClickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C983927DDA53C00B7F3A6 /* ClickerView.swift */; };
+		325C984127DDA85000B7F3A6 /* ClickerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984027DDA85000B7F3A6 /* ClickerMessage.swift */; };
+		325C984227DDA85000B7F3A6 /* ClickerMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984027DDA85000B7F3A6 /* ClickerMessage.swift */; };
 		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
 		329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C027D8F3FC004C2D84 /* SetupView.swift */; };
 		329F49C827D9083B004C2D84 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C727D9083B004C2D84 /* GameState.swift */; };
@@ -64,6 +67,8 @@
 		325C982C27DC7CBA00B7F3A6 /* BuzzerManager+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BuzzerManager+Networking.swift"; sourceTree = "<group>"; };
 		325C983127DC8E4400B7F3A6 /* UIApplication+KeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+KeyWindow.swift"; sourceTree = "<group>"; };
 		325C983627DCB47400B7F3A6 /* GroupScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupScore.swift; sourceTree = "<group>"; };
+		325C983927DDA53C00B7F3A6 /* ClickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerView.swift; sourceTree = "<group>"; };
+		325C984027DDA85000B7F3A6 /* ClickerMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerMessage.swift; sourceTree = "<group>"; };
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Buzzer-Pro-Max-iOS-Info.plist"; sourceTree = "<group>"; };
 		329F49C027D8F3FC004C2D84 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -163,6 +168,43 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		325C983827DDA50F00B7F3A6 /* Clicker */ = {
+			isa = PBXGroup;
+			children = (
+				325C983927DDA53C00B7F3A6 /* ClickerView.swift */,
+			);
+			path = Clicker;
+			sourceTree = "<group>";
+		};
+		325C983B27DDA82200B7F3A6 /* Messagable */ = {
+			isa = PBXGroup;
+			children = (
+				32C11AA327D8564700561F2B /* Messagable.swift */,
+				329F49DB27D9209F004C2D84 /* Messagable+CodableUtils.swift */,
+				32C11AB027D8610700561F2B /* Sender.swift */,
+			);
+			path = Messagable;
+			sourceTree = "<group>";
+		};
+		325C983C27DDA82C00B7F3A6 /* Mac Messages */ = {
+			isa = PBXGroup;
+			children = (
+				325C981F27DC4F9800B7F3A6 /* HelloMessage.swift */,
+				329F49D927D91E57004C2D84 /* CommandMessage.swift */,
+			);
+			path = "Mac Messages";
+			sourceTree = "<group>";
+		};
+		325C983D27DDA83300B7F3A6 /* iPad Messages */ = {
+			isa = PBXGroup;
+			children = (
+				32C11AAD27D860FD00561F2B /* iPadMessage.swift */,
+				32C11AAA27D85F9A00561F2B /* TriviaMessage.swift */,
+				325C984027DDA85000B7F3A6 /* ClickerMessage.swift */,
+			);
+			path = "iPad Messages";
+			sourceTree = "<group>";
+		};
 		329F49BD27D8EBF8004C2D84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				329F49CF27D91210004C2D84 /* GameManagerView.swift */,
+				325C983827DDA50F00B7F3A6 /* Clicker */,
 				329F49D827D917AE004C2D84 /* Trivia */,
 			);
 			path = "Game Views";
@@ -312,13 +355,9 @@
 		32C11AA927D85F8400561F2B /* Communication */ = {
 			isa = PBXGroup;
 			children = (
-				32C11AA327D8564700561F2B /* Messagable.swift */,
-				329F49DB27D9209F004C2D84 /* Messagable+CodableUtils.swift */,
-				32C11AB027D8610700561F2B /* Sender.swift */,
-				32C11AAD27D860FD00561F2B /* iPadMessage.swift */,
-				325C981F27DC4F9800B7F3A6 /* HelloMessage.swift */,
-				329F49D927D91E57004C2D84 /* CommandMessage.swift */,
-				32C11AAA27D85F9A00561F2B /* TriviaMessage.swift */,
+				325C983B27DDA82200B7F3A6 /* Messagable */,
+				325C983D27DDA83300B7F3A6 /* iPad Messages */,
+				325C983C27DDA82C00B7F3A6 /* Mac Messages */,
 			);
 			path = Communication;
 			sourceTree = "<group>";
@@ -472,7 +511,9 @@
 				329F49CA27D90C3C004C2D84 /* Group.swift in Sources */,
 				329F49D727D917A6004C2D84 /* TriviaManagerView.swift in Sources */,
 				32C11AB127D8610700561F2B /* Sender.swift in Sources */,
+				325C983A27DDA53C00B7F3A6 /* ClickerView.swift in Sources */,
 				32C11A7027D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */,
+				325C984127DDA85000B7F3A6 /* ClickerMessage.swift in Sources */,
 				32C11AAB27D85F9A00561F2B /* TriviaMessage.swift in Sources */,
 				329F49C827D9083B004C2D84 /* GameState.swift in Sources */,
 				329F49CD27D90C64004C2D84 /* Group+GroupData.swift in Sources */,
@@ -502,6 +543,7 @@
 				329F49CB27D90C44004C2D84 /* Group.swift in Sources */,
 				32C11A8027D79B4D00561F2B /* AdminPanelView.swift in Sources */,
 				329F49DF27D920E9004C2D84 /* GameState.swift in Sources */,
+				325C984227DDA85000B7F3A6 /* ClickerMessage.swift in Sources */,
 				325C982127DC4FBD00B7F3A6 /* HelloMessage.swift in Sources */,
 				329F49DD27D920A5004C2D84 /* Messagable+CodableUtils.swift in Sources */,
 				32C11A9C27D7A4D600561F2B /* Buzzer_Pro_MaxApp.swift in Sources */,

@@ -23,7 +23,7 @@ struct TriviaView: View {
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                HStack {
+                HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         Text("Challenge 0")
                             .font(.system(size: 36, weight: .bold))
@@ -34,7 +34,7 @@ struct TriviaView: View {
                     
                     Spacer()
                     
-                    FlagView(groupNumber: 1)
+                    FlagView(groupNumber: group.number)
                         .frame(width: 200)
                 }
                 
