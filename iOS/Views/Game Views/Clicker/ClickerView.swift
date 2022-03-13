@@ -15,16 +15,20 @@ struct ClickerView: View {
     
     var body: some View {
         ZStack {
-            VStack(spacing: 0) {
-                Color("Team\(communicationManager.commandInfo["team"] ?? "1")")
-                Text("Tap anywhere on screen, as fast as you can!")
-                    .font(.system(size: 36, weight: .regular))
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(.black)
-            }
+            Color("Team\(communicationManager.commandInfo["team"] ?? "1")")
                 .edgesIgnoringSafeArea(.all)
+            
+            BouncyYJView {
+                communicationManager.send(message: ClickerMessage(team: Int(communicationManager.commandInfo["team"]!)!,
+                                                                  group: group,
+                                                                  points: 20,
+                                                                  sendDate: .now))
+            } tappedOnZK: {
+                communicationManager.send(message: ClickerMessage(team: Int(communicationManager.commandInfo["team"]!)!,
+                                                                  group: group,
+                                                                  points: -20,
+                                                                  sendDate: .now))
+            }
             
             VStack {
                 HStack(alignment: .top) {
@@ -41,10 +45,19 @@ struct ClickerView: View {
                     FlagView(groupNumber: group.number)
                         .frame(width: 200)
                 }
+                .padding()
                 
                 Spacer()
+                
+                Text("Tap anywhere on screen, as fast as you can!")
+                    .font(.system(size: 36, weight: .regular))
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .background(.black)
             }
-            .padding()
+            .edgesIgnoringSafeArea(.bottom)
             .foregroundColor(.white)
         }
         .onTapGesture {

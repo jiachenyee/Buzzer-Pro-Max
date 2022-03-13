@@ -248,8 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				329F49CF27D91210004C2D84 /* GameManagerView.swift */,
-				325C983827DDA50F00B7F3A6 /* Clicker */,
 				329F49D827D917AE004C2D84 /* Trivia */,
+				325C983827DDA50F00B7F3A6 /* Clicker */,
 			);
 			path = "Game Views";
 			sourceTree = "<group>";
