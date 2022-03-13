@@ -13,17 +13,17 @@ struct ClickerView: View {
     
     var body: some View {
         
-        let blueTeam = [
+        let blueTeam = Team(groups:  [
             Group(number: 1, name: "cold choc"),
             Group(number: 2, name: "swift at swift"),
             Group(number: 3, name: "swifters")
-        ]
+        ], teamNumber: 1, score: 100)
         
-        let redTeam = [
+        let redTeam = Team(groups: [
             Group(number: 4, name: "pineapple"),
             Group(number: 5, name: "mccakes"),
             Group(number: 6, name: "good morning")
-        ]
+        ], teamNumber: 2, score: 100)
         
         VStack(alignment: .leading) {
             TimerView(duration: 60)
@@ -39,7 +39,7 @@ struct ClickerView: View {
                 
                 HStack(alignment: .center) {
                     VStack(alignment: .leading, spacing: 32) {
-                        ForEach(blueTeam, id: \.number) { group in
+                        ForEach(blueTeam.groups, id: \.number) { group in
                             Text("\(group.number)-\(group.name)")
                         }
                     }
@@ -50,7 +50,7 @@ struct ClickerView: View {
                         .font(.system(size: 72, weight: .bold))
                     
                     VStack(alignment: .trailing, spacing: 32) {
-                        ForEach(redTeam, id: \.number) { group in
+                        ForEach(redTeam.groups, id: \.number) { group in
                             Text("\(group.number)-\(group.name)")
                         }
                     }
@@ -59,7 +59,21 @@ struct ClickerView: View {
                 }
                 .padding(.top)
                 
-                Spacer()
+                HStack {
+                    Text("\(Int(round(blueTeam.score)))")
+                    Spacer()
+                    Text("\(Int(round(redTeam.score)))")
+                }
+                .font(.system(size: 36, weight: .bold))
+                .padding(.top, 64)
+                
+                ZStack(alignment: .trailing) {
+                    Rectangle()
+                        .fill(Color("Team1"))
+                    Rectangle()
+                        .fill(Color("Team2"))
+                        .scaleEffect(x: (redTeam.score / blueTeam.score) / 2, anchor: .trailing)
+                }
             }
             .padding(32)
         }
