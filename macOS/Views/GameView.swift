@@ -14,6 +14,8 @@ struct GameView: View {
             Text("Actual game")
         }
         .navigationTitle("Game")
+        .edgesIgnoringSafeArea(.all)
+        .frame(width: 1920, height: 1080)
     }
 }
 

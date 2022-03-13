@@ -21,6 +21,8 @@ struct LeaderboardView: View {
             }
         }
         .navigationTitle("Leaderboard")
+        .edgesIgnoringSafeArea(.all)
+        .frame(width: 1920, height: 1080)
     }
 }
 
