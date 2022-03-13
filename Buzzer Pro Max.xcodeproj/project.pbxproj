@@ -24,6 +24,7 @@
 		325C984727DDADC600B7F3A6 /* BouncyYJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984627DDADC600B7F3A6 /* BouncyYJ.swift */; };
 		325C984C27DDC13200B7F3A6 /* FlagRaisingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984B27DDC13200B7F3A6 /* FlagRaisingView.swift */; };
 		325C985027DDC59500B7F3A6 /* PictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984F27DDC59500B7F3A6 /* PictionaryView.swift */; };
+		325C985627DDC76F00B7F3A6 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C985527DDC76F00B7F3A6 /* CanvasView.swift */; };
 		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
 		329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C027D8F3FC004C2D84 /* SetupView.swift */; };
 		329F49C827D9083B004C2D84 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C727D9083B004C2D84 /* GameState.swift */; };
@@ -77,6 +78,7 @@
 		325C984627DDADC600B7F3A6 /* BouncyYJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyYJ.swift; sourceTree = "<group>"; };
 		325C984B27DDC13200B7F3A6 /* FlagRaisingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagRaisingView.swift; sourceTree = "<group>"; };
 		325C984F27DDC59500B7F3A6 /* PictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictionaryView.swift; sourceTree = "<group>"; };
+		325C985527DDC76F00B7F3A6 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Buzzer-Pro-Max-iOS-Info.plist"; sourceTree = "<group>"; };
 		329F49C027D8F3FC004C2D84 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				325C984F27DDC59500B7F3A6 /* PictionaryView.swift */,
+				325C985527DDC76F00B7F3A6 /* CanvasView.swift */,
 			);
 			path = Pictionary;
 			sourceTree = "<group>";
@@ -559,6 +562,7 @@
 				329F49D027D91210004C2D84 /* GameManagerView.swift in Sources */,
 				325C983327DC8E4900B7F3A6 /* UIApplication+KeyWindow.swift in Sources */,
 				32C11AA027D83DD700561F2B /* FlagView.swift in Sources */,
+				325C985627DDC76F00B7F3A6 /* CanvasView.swift in Sources */,
 				325C984427DDAD2E00B7F3A6 /* BouncyYJView.swift in Sources */,
 				32C11AAE27D860FD00561F2B /* iPadMessage.swift in Sources */,
 				325C982027DC4F9800B7F3A6 /* HelloMessage.swift in Sources */,
