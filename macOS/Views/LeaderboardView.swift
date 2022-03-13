@@ -6,23 +6,44 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct LeaderboardView: View {
     
     var groupScores: [GroupScore]
     
     var body: some View {
+            
         ZStack {
             Color.black
-            HStack {
-                ForEach(groupScores, id: \.group) { groupScore in
-                    FlagView(groupNumber: groupScore.group.number)
+            HStack(spacing: 0) {
+                ForEach(groupScores, id: \.group.number) { groupScore in
+                    VStack(alignment: .leading) {
+                        Text("\(groupScore.group.number)-\(groupScore.group.name)")
+                            .font(.system(size: 24, weight: .bold))
+                        
+                        HStack(alignment: .bottom, spacing: 0) {
+                            Rectangle()
+                                .frame(width: 20, height: 900)
+                            
+                            FlagView(groupNumber: groupScore.group.number)
+                                .frame(width: 250)
+                        }
+                        
+                        Text("\(Int(groupScore.score.rounded()))")
+                            .multilineTextAlignment(.center)
+                            .font(.system(size: 42, weight: .bold))
+                            .frame(maxWidth: .infinity)
+                    }
+                    .frame(maxWidth: .infinity)
                 }
+                .padding(.trailing)
             }
+            .padding(.horizontal)
         }
-        .navigationTitle("Leaderboard")
-        .edgesIgnoringSafeArea(.all)
         .frame(width: 1920, height: 1080)
+        .edgesIgnoringSafeArea(.all)
+        .navigationTitle("Leaderboard")
     }
 }
 
