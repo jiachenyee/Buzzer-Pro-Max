@@ -18,7 +18,7 @@ struct GameView: View {
             switch buzzerManager.gameState {
             case .holding: EmptyView() // briefing
             case .trivia: TriviaManagerView(buzzerManager: buzzerManager)
-            case .clicker: EmptyView()
+            case .clicker: ClickerView(buzzerManager: buzzerManager)
             case .sketches: EmptyView() 
             }
         }

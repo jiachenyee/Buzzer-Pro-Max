@@ -30,6 +30,7 @@
 		325C985F27DE6EC400B7F3A6 /* TriviaQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C985E27DE6EC400B7F3A6 /* TriviaQuestionView.swift */; };
 		325C986327DE6F3000B7F3A6 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C986227DE6F3000B7F3A6 /* TimerView.swift */; };
 		325C986527DE720B00B7F3A6 /* TriviaManagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C986427DE720B00B7F3A6 /* TriviaManagerView.swift */; };
+		325C986A27DE812E00B7F3A6 /* ClickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C986927DE812E00B7F3A6 /* ClickerView.swift */; };
 		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
 		329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C027D8F3FC004C2D84 /* SetupView.swift */; };
 		329F49C827D9083B004C2D84 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C727D9083B004C2D84 /* GameState.swift */; };
@@ -89,6 +90,7 @@
 		325C985E27DE6EC400B7F3A6 /* TriviaQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuestionView.swift; sourceTree = "<group>"; };
 		325C986227DE6F3000B7F3A6 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		325C986427DE720B00B7F3A6 /* TriviaManagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaManagerView.swift; sourceTree = "<group>"; };
+		325C986927DE812E00B7F3A6 /* ClickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerView.swift; sourceTree = "<group>"; };
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Buzzer-Pro-Max-iOS-Info.plist"; sourceTree = "<group>"; };
 		329F49C027D8F3FC004C2D84 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			children = (
 				329F49E727D9F507004C2D84 /* GameView.swift */,
 				325C986027DE6EC800B7F3A6 /* Trivia */,
+				325C986827DE812000B7F3A6 /* Clicker */,
 				325C986627DE721900B7F3A6 /* Shared Views */,
 			);
 			path = "Game Window";
@@ -288,6 +291,14 @@
 				325C985C27DE51E900B7F3A6 /* CentralControlPointsView.swift */,
 			);
 			path = "Central Control";
+			sourceTree = "<group>";
+		};
+		325C986827DE812000B7F3A6 /* Clicker */ = {
+			isa = PBXGroup;
+			children = (
+				325C986927DE812E00B7F3A6 /* ClickerView.swift */,
+			);
+			path = Clicker;
 			sourceTree = "<group>";
 		};
 		329F49BD27D8EBF8004C2D84 /* Views */ = {
@@ -615,6 +626,7 @@
 			files = (
 				325C982927DC72DB00B7F3A6 /* BuzzerManager+MCSessionDelegate.swift in Sources */,
 				32C11AB227D8610700561F2B /* Sender.swift in Sources */,
+				325C986A27DE812E00B7F3A6 /* ClickerView.swift in Sources */,
 				325C985F27DE6EC400B7F3A6 /* TriviaQuestionView.swift in Sources */,
 				329F49DE27D920AD004C2D84 /* CommandMessage.swift in Sources */,
 				325C982627DC6D8700B7F3A6 /* MCConstants.swift in Sources */,
