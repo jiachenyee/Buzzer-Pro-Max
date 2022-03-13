@@ -16,9 +16,6 @@ struct GameView: View {
             Color.black
             
             TriviaManagerView(buzzerManager: buzzerManager)
-            TriviaQuestionView(triviaQuestion: TriviaQuestion(
-                title: "Name one iPhone from every year in chronological order",
-                duration: 30))
         }
         .navigationTitle("Game")
         .edgesIgnoringSafeArea(.all)

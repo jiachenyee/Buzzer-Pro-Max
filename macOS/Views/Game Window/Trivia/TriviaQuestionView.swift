@@ -11,6 +11,8 @@ struct TriviaQuestionView: View {
     
     var triviaQuestion: TriviaQuestion
     
+    @State var isAnsweringTime = true
+    
     var body: some View {
         VStack(alignment: .leading) {
             TimerView(duration: triviaQuestion.duration)
@@ -32,10 +34,15 @@ struct TriviaQuestionView: View {
             }
             .padding(32)
             
-            Text("Tap on your iPad to buzz in!")
+            Text(isAnsweringTime ? "Tap on your iPad to buzz in!" : "Time's up! No more buzzing!")
                 .font(.system(size: 28, weight: .bold))
                 .frame(maxWidth: .infinity)
                 .padding(.bottom, 32)
+        }
+        .onAppear {
+            Timer.scheduledTimer(withTimeInterval: triviaQuestion.duration, repeats: false) { _ in
+                isAnsweringTime = false
+            }
         }
     }
 }
