@@ -1,6 +1,6 @@
 //
 //  FlagRaisingView.swift
-//  Buzzer Pro Max
+//  Buzzer Pro Max (iOS)
 //
 //  Created by Jia Chen Yee on 13/3/22.
 //

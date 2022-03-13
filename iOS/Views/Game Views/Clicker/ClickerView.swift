@@ -15,16 +15,18 @@ struct ClickerView: View {
     
     var body: some View {
         ZStack {
-            Color("Team\(communicationManager.commandInfo["team"] ?? "1")")
+            let team = Int(communicationManager.commandInfo["team"]!)!
+            
+            Color("Team\(team)")
                 .edgesIgnoringSafeArea(.all)
             
             BouncyYJView {
-                communicationManager.send(message: ClickerFlagMessage(team: Int(communicationManager.commandInfo["team"]!)!,
+                communicationManager.send(message: ClickerFlagMessage(team: team,
                                                                   group: group,
                                                                   points: 20,
                                                                   sendDate: .now))
             } tappedOnZK: {
-                communicationManager.send(message: ClickerFlagMessage(team: Int(communicationManager.commandInfo["team"]!)!,
+                communicationManager.send(message: ClickerFlagMessage(team: team,
                                                                   group: group,
                                                                   points: -20,
                                                                   sendDate: .now))

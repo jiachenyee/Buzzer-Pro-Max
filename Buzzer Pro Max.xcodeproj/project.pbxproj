@@ -23,7 +23,7 @@
 		325C984427DDAD2E00B7F3A6 /* BouncyYJView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984327DDAD2E00B7F3A6 /* BouncyYJView.swift */; };
 		325C984727DDADC600B7F3A6 /* BouncyYJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984627DDADC600B7F3A6 /* BouncyYJ.swift */; };
 		325C984C27DDC13200B7F3A6 /* FlagRaisingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984B27DDC13200B7F3A6 /* FlagRaisingView.swift */; };
-		325C984D27DDC13200B7F3A6 /* FlagRaisingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984B27DDC13200B7F3A6 /* FlagRaisingView.swift */; };
+		325C985027DDC59500B7F3A6 /* PictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984F27DDC59500B7F3A6 /* PictionaryView.swift */; };
 		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
 		329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C027D8F3FC004C2D84 /* SetupView.swift */; };
 		329F49C827D9083B004C2D84 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C727D9083B004C2D84 /* GameState.swift */; };
@@ -76,6 +76,7 @@
 		325C984327DDAD2E00B7F3A6 /* BouncyYJView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyYJView.swift; sourceTree = "<group>"; };
 		325C984627DDADC600B7F3A6 /* BouncyYJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyYJ.swift; sourceTree = "<group>"; };
 		325C984B27DDC13200B7F3A6 /* FlagRaisingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagRaisingView.swift; sourceTree = "<group>"; };
+		325C984F27DDC59500B7F3A6 /* PictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictionaryView.swift; sourceTree = "<group>"; };
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Buzzer-Pro-Max-iOS-Info.plist"; sourceTree = "<group>"; };
 		329F49C027D8F3FC004C2D84 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -230,6 +231,14 @@
 			path = "Flag Raising";
 			sourceTree = "<group>";
 		};
+		325C984E27DDC56000B7F3A6 /* Pictionary */ = {
+			isa = PBXGroup;
+			children = (
+				325C984F27DDC59500B7F3A6 /* PictionaryView.swift */,
+			);
+			path = Pictionary;
+			sourceTree = "<group>";
+		};
 		329F49BD27D8EBF8004C2D84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +271,7 @@
 				329F49D827D917AE004C2D84 /* Trivia */,
 				325C983827DDA50F00B7F3A6 /* Clicker */,
 				325C984A27DDC05900B7F3A6 /* Flag Raising */,
+				325C984E27DDC56000B7F3A6 /* Pictionary */,
 			);
 			path = "Game Views";
 			sourceTree = "<group>";
@@ -530,6 +540,7 @@
 				325C984727DDADC600B7F3A6 /* BouncyYJ.swift in Sources */,
 				329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */,
 				32C11AA227D854E000561F2B /* TriviaQuestion.swift in Sources */,
+				325C985027DDC59500B7F3A6 /* PictionaryView.swift in Sources */,
 				32C11A7227D7955000561F2B /* HoldingView.swift in Sources */,
 				32C11A9D27D83A1900561F2B /* TriviaView.swift in Sources */,
 				329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */,
@@ -562,7 +573,6 @@
 			files = (
 				325C982927DC72DB00B7F3A6 /* BuzzerManager+MCSessionDelegate.swift in Sources */,
 				32C11AB227D8610700561F2B /* Sender.swift in Sources */,
-				325C984D27DDC13200B7F3A6 /* FlagRaisingView.swift in Sources */,
 				329F49DE27D920AD004C2D84 /* CommandMessage.swift in Sources */,
 				325C982627DC6D8700B7F3A6 /* MCConstants.swift in Sources */,
 				32C11AAC27D85F9A00561F2B /* TriviaMessage.swift in Sources */,
