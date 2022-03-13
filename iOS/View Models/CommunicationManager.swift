@@ -11,8 +11,8 @@ import MultipeerConnectivity
 
 class CommunicationManager: NSObject, ObservableObject {
     
-    @Published var gameState: GameState = .trivia
-    @Published var commandInfo: [String: String] = ["questionNo": "0"]
+    @Published var gameState: GameState = .holding
+    @Published var commandInfo: [String: String] = [:]
     
     @Published var isConnected = false
     

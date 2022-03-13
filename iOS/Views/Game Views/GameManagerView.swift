@@ -21,8 +21,6 @@ struct GameManagerView: View {
             TriviaManagerView(group: group, communicationManager: communicationManager)
         case .clicker:
             ClickerView(group: group, communicationManager: communicationManager)
-        case .flag:
-            FlagRaisingView(group: group, communicationManager: communicationManager)
         case .sketches:
             PictionaryView(group: group, communicationManager: communicationManager)
         }

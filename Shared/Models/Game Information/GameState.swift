@@ -11,6 +11,5 @@ enum GameState: Codable {
     case holding
     case trivia
     case clicker
-    case flag
     case sketches
 }
