@@ -78,7 +78,6 @@ struct ClickerView: View {
                         .fill(Color("Team2"))
                         .scaleEffect(x: effectiveRedScore / (effectiveRedScore + effectiveBlueScore), anchor: .trailing)
                     
-                    
                     HStack {
                         VStack(alignment: .trailing, spacing: 16) {
                             ForEach(blueTeam.groups, id: \.number) { group in
