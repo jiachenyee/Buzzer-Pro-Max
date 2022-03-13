@@ -22,7 +22,6 @@
 		325C984227DDA85000B7F3A6 /* ClickerFlagMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984027DDA85000B7F3A6 /* ClickerFlagMessage.swift */; };
 		325C984427DDAD2E00B7F3A6 /* BouncyYJView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984327DDAD2E00B7F3A6 /* BouncyYJView.swift */; };
 		325C984727DDADC600B7F3A6 /* BouncyYJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984627DDADC600B7F3A6 /* BouncyYJ.swift */; };
-		325C984C27DDC13200B7F3A6 /* FlagRaisingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984B27DDC13200B7F3A6 /* FlagRaisingView.swift */; };
 		325C985027DDC59500B7F3A6 /* PictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C984F27DDC59500B7F3A6 /* PictionaryView.swift */; };
 		325C985627DDC76F00B7F3A6 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C985527DDC76F00B7F3A6 /* CanvasView.swift */; };
 		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
@@ -76,7 +75,6 @@
 		325C984027DDA85000B7F3A6 /* ClickerFlagMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClickerFlagMessage.swift; sourceTree = "<group>"; };
 		325C984327DDAD2E00B7F3A6 /* BouncyYJView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyYJView.swift; sourceTree = "<group>"; };
 		325C984627DDADC600B7F3A6 /* BouncyYJ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BouncyYJ.swift; sourceTree = "<group>"; };
-		325C984B27DDC13200B7F3A6 /* FlagRaisingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagRaisingView.swift; sourceTree = "<group>"; };
 		325C984F27DDC59500B7F3A6 /* PictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictionaryView.swift; sourceTree = "<group>"; };
 		325C985527DDC76F00B7F3A6 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
@@ -225,14 +223,6 @@
 			path = "Bouncy YJ";
 			sourceTree = "<group>";
 		};
-		325C984A27DDC05900B7F3A6 /* Flag Raising */ = {
-			isa = PBXGroup;
-			children = (
-				325C984B27DDC13200B7F3A6 /* FlagRaisingView.swift */,
-			);
-			path = "Flag Raising";
-			sourceTree = "<group>";
-		};
 		325C984E27DDC56000B7F3A6 /* Pictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,7 +263,6 @@
 				329F49CF27D91210004C2D84 /* GameManagerView.swift */,
 				329F49D827D917AE004C2D84 /* Trivia */,
 				325C983827DDA50F00B7F3A6 /* Clicker */,
-				325C984A27DDC05900B7F3A6 /* Flag Raising */,
 				325C984E27DDC56000B7F3A6 /* Pictionary */,
 			);
 			path = "Game Views";
@@ -551,7 +540,6 @@
 				329F49DC27D9209F004C2D84 /* Messagable+CodableUtils.swift in Sources */,
 				329F49CA27D90C3C004C2D84 /* Group.swift in Sources */,
 				329F49D727D917A6004C2D84 /* TriviaManagerView.swift in Sources */,
-				325C984C27DDC13200B7F3A6 /* FlagRaisingView.swift in Sources */,
 				32C11AB127D8610700561F2B /* Sender.swift in Sources */,
 				325C983A27DDA53C00B7F3A6 /* ClickerView.swift in Sources */,
 				32C11A7027D7955000561F2B /* Buzzer_Pro_MaxApp.swift in Sources */,
