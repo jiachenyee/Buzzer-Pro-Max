@@ -11,7 +11,17 @@ import MultipeerConnectivity
 class BuzzerManager: NSObject, ObservableObject {
     
     @Published var isSessionActive = false
-    @Published var groupScores: [GroupScore] = []
+    @Published var groupScores: [GroupScore] = [] {
+        didSet {
+            let changes = Set(groupScores).symmetricDifference(Set(oldValue)).sorted {
+                $0.group.number > $1.group.number
+            }.map { groupScore in
+                "\(groupScores.contains(groupScore) ? "New" : "Old"): \(groupScore.group.number)-\(groupScore.group.name): \(groupScore.score)"
+            }.joined(separator: "\n")
+            
+            addLog(emoji: "🏅", message: "Updated Scores:\n\(changes)")
+        }
+    }
     
     @Published var gameState: GameState = .holding
     

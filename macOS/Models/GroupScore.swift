@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GroupScore {
+struct GroupScore: Hashable {
     var group: Group
     var score: Double
 }
