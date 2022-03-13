@@ -20,6 +20,7 @@ class BuzzerManager: NSObject, ObservableObject {
     
     var peers: [MCPeerID] = []
     
+    // Get host name, remove ".local"
     let hostName = String(ProcessInfo.processInfo.hostName.dropLast(6))
     
     override init() {

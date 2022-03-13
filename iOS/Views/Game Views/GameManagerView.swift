@@ -24,7 +24,7 @@ struct GameManagerView: View {
         case .flag:
             FlagRaisingView(group: group, communicationManager: communicationManager)
         case .sketches:
-            EmptyView()
+            PictionaryView(group: group, communicationManager: communicationManager)
         }
     }
 }
