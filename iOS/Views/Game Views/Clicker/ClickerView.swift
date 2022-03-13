@@ -23,7 +23,7 @@ struct ClickerView: View {
             BouncyYJView {
                 communicationManager.send(message: ClickerFlagMessage(team: team,
                                                                   group: group,
-                                                                  points: 20,
+                                                                  points: 10,
                                                                   sendDate: .now))
             } tappedOnZK: {
                 communicationManager.send(message: ClickerFlagMessage(team: team,
