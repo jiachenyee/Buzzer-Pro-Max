@@ -176,8 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				325C983927DDA53C00B7F3A6 /* ClickerView.swift */,
-				325C984327DDAD2E00B7F3A6 /* BouncyYJView.swift */,
-				325C984627DDADC600B7F3A6 /* BouncyYJ.swift */,
+				325C984927DDBC3D00B7F3A6 /* Bouncy YJ */,
 			);
 			path = Clicker;
 			sourceTree = "<group>";
@@ -209,6 +208,15 @@
 				325C984027DDA85000B7F3A6 /* ClickerMessage.swift */,
 			);
 			path = "iPad Messages";
+			sourceTree = "<group>";
+		};
+		325C984927DDBC3D00B7F3A6 /* Bouncy YJ */ = {
+			isa = PBXGroup;
+			children = (
+				325C984327DDAD2E00B7F3A6 /* BouncyYJView.swift */,
+				325C984627DDADC600B7F3A6 /* BouncyYJ.swift */,
+			);
+			path = "Bouncy YJ";
 			sourceTree = "<group>";
 		};
 		329F49BD27D8EBF8004C2D84 /* Views */ = {

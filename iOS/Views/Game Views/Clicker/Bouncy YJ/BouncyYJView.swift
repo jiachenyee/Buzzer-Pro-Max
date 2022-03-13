@@ -10,13 +10,12 @@ import SwiftUI
 import UIKit
 
 struct BouncyYJView: UIViewRepresentable {
+    
+    var tappedOnYJ: (() -> Void)
+    var tappedOnZK: (() -> Void)
+    
     func makeUIView(context: Context) -> BouncyYJ {
-        BouncyYJ {
-            print("I AM A POTATO")
-        } tappedOnZK: {
-            print("I AM A TOMATO")
-        }
-
+        BouncyYJ(tappedOnYJ: tappedOnYJ, tappedOnZK: tappedOnZK)
     }
     
     func updateUIView(_ uiView: BouncyYJ, context: Context) {
