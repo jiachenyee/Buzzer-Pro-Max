@@ -27,6 +27,8 @@
 		325C985827DE4E8D00B7F3A6 /* CentralControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C985727DE4E8D00B7F3A6 /* CentralControlView.swift */; };
 		325C985A27DE4E9E00B7F3A6 /* GameControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C985927DE4E9E00B7F3A6 /* GameControlView.swift */; };
 		325C985D27DE51E900B7F3A6 /* CentralControlPointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C985C27DE51E900B7F3A6 /* CentralControlPointsView.swift */; };
+		325C985F27DE6EC400B7F3A6 /* TriviaQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C985E27DE6EC400B7F3A6 /* TriviaQuestionView.swift */; };
+		325C986327DE6F3000B7F3A6 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325C986227DE6F3000B7F3A6 /* TimerView.swift */; };
 		329F49BC27D8D38F004C2D84 /* CommunicationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */; };
 		329F49C127D8F3FC004C2D84 /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C027D8F3FC004C2D84 /* SetupView.swift */; };
 		329F49C827D9083B004C2D84 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329F49C727D9083B004C2D84 /* GameState.swift */; };
@@ -83,6 +85,8 @@
 		325C985727DE4E8D00B7F3A6 /* CentralControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralControlView.swift; sourceTree = "<group>"; };
 		325C985927DE4E9E00B7F3A6 /* GameControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControlView.swift; sourceTree = "<group>"; };
 		325C985C27DE51E900B7F3A6 /* CentralControlPointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralControlPointsView.swift; sourceTree = "<group>"; };
+		325C985E27DE6EC400B7F3A6 /* TriviaQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaQuestionView.swift; sourceTree = "<group>"; };
+		325C986227DE6F3000B7F3A6 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		329F49BB27D8D38F004C2D84 /* CommunicationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationManager.swift; sourceTree = "<group>"; };
 		329F49BE27D8F26C004C2D84 /* Buzzer-Pro-Max-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Buzzer-Pro-Max-iOS-Info.plist"; sourceTree = "<group>"; };
 		329F49C027D8F3FC004C2D84 /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -249,6 +253,24 @@
 			path = "Admin Window";
 			sourceTree = "<group>";
 		};
+		325C986027DE6EC800B7F3A6 /* Trivia */ = {
+			isa = PBXGroup;
+			children = (
+				325C985E27DE6EC400B7F3A6 /* TriviaQuestionView.swift */,
+			);
+			path = Trivia;
+			sourceTree = "<group>";
+		};
+		325C986127DE6ECE00B7F3A6 /* Game Window */ = {
+			isa = PBXGroup;
+			children = (
+				329F49E727D9F507004C2D84 /* GameView.swift */,
+				325C986227DE6F3000B7F3A6 /* TimerView.swift */,
+				325C986027DE6EC800B7F3A6 /* Trivia */,
+			);
+			path = "Game Window";
+			sourceTree = "<group>";
+		};
 		329F49BD27D8EBF8004C2D84 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,7 +332,7 @@
 			children = (
 				329F49E427D9F445004C2D84 /* LeaderboardView.swift */,
 				325C985B27DE4F1C00B7F3A6 /* Admin Window */,
-				329F49E727D9F507004C2D84 /* GameView.swift */,
+				325C986127DE6ECE00B7F3A6 /* Game Window */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -574,6 +596,7 @@
 			files = (
 				325C982927DC72DB00B7F3A6 /* BuzzerManager+MCSessionDelegate.swift in Sources */,
 				32C11AB227D8610700561F2B /* Sender.swift in Sources */,
+				325C985F27DE6EC400B7F3A6 /* TriviaQuestionView.swift in Sources */,
 				329F49DE27D920AD004C2D84 /* CommandMessage.swift in Sources */,
 				325C982627DC6D8700B7F3A6 /* MCConstants.swift in Sources */,
 				32C11AAC27D85F9A00561F2B /* TriviaMessage.swift in Sources */,
@@ -585,6 +608,7 @@
 				329F49CB27D90C44004C2D84 /* Group.swift in Sources */,
 				32C11A8027D79B4D00561F2B /* AdminPanelView.swift in Sources */,
 				329F49DF27D920E9004C2D84 /* GameState.swift in Sources */,
+				325C986327DE6F3000B7F3A6 /* TimerView.swift in Sources */,
 				325C984227DDA85000B7F3A6 /* ClickerFlagMessage.swift in Sources */,
 				325C982127DC4FBD00B7F3A6 /* HelloMessage.swift in Sources */,
 				329F49DD27D920A5004C2D84 /* Messagable+CodableUtils.swift in Sources */,
