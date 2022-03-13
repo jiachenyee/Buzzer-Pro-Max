@@ -11,7 +11,9 @@ struct GameView: View {
     var body: some View {
         ZStack {
             Color.black
-            Text("Actual game")
+            TriviaQuestionView(triviaQuestion: TriviaQuestion(
+                title: "Name one iPhone from every year in chronological order",
+                duration: 30))
         }
         .navigationTitle("Game")
         .edgesIgnoringSafeArea(.all)
