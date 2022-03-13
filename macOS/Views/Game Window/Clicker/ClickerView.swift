@@ -67,12 +67,27 @@ struct ClickerView: View {
                 .font(.system(size: 36, weight: .bold))
                 .padding(.top, 64)
                 
-                ZStack(alignment: .trailing) {
+                ZStack {
                     Rectangle()
                         .fill(Color("Team1"))
                     Rectangle()
                         .fill(Color("Team2"))
                         .scaleEffect(x: (redTeam.score / blueTeam.score) / 2, anchor: .trailing)
+                    
+                    HStack {
+                        VStack(alignment: .trailing, spacing: 32) {
+                            ForEach(blueTeam.groups, id: \.number) { group in
+                                FlagView(groupNumber: group.number)
+                            }
+                        }
+                        Spacer()
+                        VStack(alignment: .trailing, spacing: 32) {
+                            ForEach(redTeam.groups, id: \.number) { group in
+                                FlagView(groupNumber: group.number)
+                            }
+                        }
+                    }
+                    .padding()
                 }
             }
             .padding(32)
