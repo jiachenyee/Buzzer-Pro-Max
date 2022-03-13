@@ -250,13 +250,6 @@
 			path = "View Models";
 			sourceTree = "<group>";
 		};
-		329F49C627D90827004C2D84 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		329F49D127D91215004C2D84 /* Game Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,7 +347,6 @@
 			isa = PBXGroup;
 			children = (
 				32C11A6027D7954F00561F2B /* Buzzer_Pro_MaxApp.swift */,
-				329F49C627D90827004C2D84 /* Models */,
 				329F49BD27D8EBF8004C2D84 /* Views */,
 				329F49BF27D8F2BD004C2D84 /* View Models */,
 				325C983027DC8E3900B7F3A6 /* Helper Methods */,
