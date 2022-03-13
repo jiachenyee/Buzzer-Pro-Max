@@ -248,8 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				32C11A7F27D79B4D00561F2B /* AdminPanelView.swift */,
-				325C985727DE4E8D00B7F3A6 /* CentralControlView.swift */,
-				325C985C27DE51E900B7F3A6 /* CentralControlPointsView.swift */,
+				325C986727DE7AB600B7F3A6 /* Central Control */,
 				325C985927DE4E9E00B7F3A6 /* GameControlView.swift */,
 			);
 			path = "Admin Window";
@@ -280,6 +279,15 @@
 				325C986227DE6F3000B7F3A6 /* TimerView.swift */,
 			);
 			path = "Shared Views";
+			sourceTree = "<group>";
+		};
+		325C986727DE7AB600B7F3A6 /* Central Control */ = {
+			isa = PBXGroup;
+			children = (
+				325C985727DE4E8D00B7F3A6 /* CentralControlView.swift */,
+				325C985C27DE51E900B7F3A6 /* CentralControlPointsView.swift */,
+			);
+			path = "Central Control";
 			sourceTree = "<group>";
 		};
 		329F49BD27D8EBF8004C2D84 /* Views */ = {
