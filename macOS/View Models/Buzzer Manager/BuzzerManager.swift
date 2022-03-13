@@ -23,10 +23,22 @@ class BuzzerManager: NSObject, ObservableObject {
         }
     }
     
-    @Published var leaderboardsHolding = false
-    @Published var gameHolding = false
+    @Published var leaderboardsHolding = false {
+        didSet {
+            addLog(emoji: "👀", message: "Leaderboards holding: \(leaderboardsHolding)")
+        }
+    }
+    @Published var gameHolding = false {
+        didSet {
+            addLog(emoji: "👀", message: "Game holding: \(leaderboardsHolding)")
+        }
+    }
     
-    @Published var gameState: GameState = .holding
+    @Published var gameState: GameState = .holding {
+        didSet {
+            addLog(emoji: "👀", message: "Game State: \(gameState)")
+        }
+    }
     
     @Published var logs = ""
     
@@ -55,5 +67,9 @@ class BuzzerManager: NSObject, ObservableObject {
                                               timeZone: .current))
         
         logs = "\(emoji) \(date) \(message)\n" + logs
+        
+        let logURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Downloads/logs.txt")
+        
+        try? logs.write(to: logURL, atomically: false, encoding: .utf8)
     }
 }
