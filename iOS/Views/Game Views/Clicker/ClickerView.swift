@@ -19,12 +19,12 @@ struct ClickerView: View {
                 .edgesIgnoringSafeArea(.all)
             
             BouncyYJView {
-                communicationManager.send(message: ClickerMessage(team: Int(communicationManager.commandInfo["team"]!)!,
+                communicationManager.send(message: ClickerFlagMessage(team: Int(communicationManager.commandInfo["team"]!)!,
                                                                   group: group,
                                                                   points: 20,
                                                                   sendDate: .now))
             } tappedOnZK: {
-                communicationManager.send(message: ClickerMessage(team: Int(communicationManager.commandInfo["team"]!)!,
+                communicationManager.send(message: ClickerFlagMessage(team: Int(communicationManager.commandInfo["team"]!)!,
                                                                   group: group,
                                                                   points: -20,
                                                                   sendDate: .now))
@@ -61,7 +61,7 @@ struct ClickerView: View {
             .foregroundColor(.white)
         }
         .onTapGesture {
-            communicationManager.send(message: ClickerMessage(team: Int(communicationManager.commandInfo["team"]!)!,
+            communicationManager.send(message: ClickerFlagMessage(team: Int(communicationManager.commandInfo["team"]!)!,
                                                               group: group,
                                                               points: 1,
                                                               sendDate: .now))

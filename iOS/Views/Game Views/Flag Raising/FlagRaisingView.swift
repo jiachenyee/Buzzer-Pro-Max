@@ -48,7 +48,7 @@ struct FlagRaisingView: View {
             .foregroundColor(.white)
         }
         .onTapGesture {
-            communicationManager.send(message: ClickerMessage(team: Int(communicationManager.commandInfo["team"]!)!,
+            communicationManager.send(message: ClickerFlagMessage(team: Int(communicationManager.commandInfo["team"]!)!,
                                                               group: group,
                                                               points: 1,
                                                               sendDate: .now))
@@ -60,5 +60,6 @@ struct FlagRaisingView: View {
 struct FlagRaisingView_Previews: PreviewProvider {
     static var previews: some View {
         FlagRaisingView(group: Group(number: 1, name: "Potato"), communicationManager: .init())
+.previewInterfaceOrientation(.landscapeLeft)
     }
 }
