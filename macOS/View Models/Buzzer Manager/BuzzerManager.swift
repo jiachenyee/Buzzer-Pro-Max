@@ -23,6 +23,9 @@ class BuzzerManager: NSObject, ObservableObject {
         }
     }
     
+    @Published var leaderboardsHolding = false
+    @Published var gameHolding = false
+    
     @Published var gameState: GameState = .holding
     
     @Published var logs = ""

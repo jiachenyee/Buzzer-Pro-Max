@@ -35,7 +35,7 @@ struct CentralControlView: View {
                 .padding(.bottom)
                 
                 Button {
-                    #warning("TO IMPLEMENT")
+                    buzzerManager.gameHolding.toggle()
                 } label: {
                     Text("Game Screen")
                         .font(.system(size: 24, weight: .regular))
@@ -49,7 +49,7 @@ struct CentralControlView: View {
                 .padding(.bottom)
                 
                 Button {
-                    #warning("TO IMPLEMENT")
+                    buzzerManager.leaderboardsHolding.toggle()
                 } label: {
                     Text("Leaderboards Screen")
                         .font(.system(size: 24, weight: .regular))

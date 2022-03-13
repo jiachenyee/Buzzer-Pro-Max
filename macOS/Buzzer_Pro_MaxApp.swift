@@ -19,13 +19,25 @@ struct BuzzerProMaxApp: App {
         .handlesExternalEvents(matching: [""])
         
         WindowGroup {
-            LeaderboardView(groupScores: buzzerManager.groupScores)
+            if buzzerManager.leaderboardsHolding {
+                Image("Holding")
+                    .resizable()
+                    .scaledToFill()
+            } else {
+                LeaderboardView(groupScores: buzzerManager.groupScores)
+            }
         }
         .windowStyle(.hiddenTitleBar)
         .handlesExternalEvents(matching: ["leaderboard"])
         
         WindowGroup {
-            GameView()
+            if buzzerManager.gameHolding {
+                Image("Holding")
+                    .resizable()
+                    .scaledToFill()
+            } else {
+                GameView()
+            }
         }
         .windowStyle(.hiddenTitleBar)
         .handlesExternalEvents(matching: ["game"])
