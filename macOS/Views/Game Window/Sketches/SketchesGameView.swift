@@ -27,6 +27,15 @@ struct SketchesGameView: View {
                 
                 Text("Skill-free Sketching Skirmish")
                     .font(.system(size: 36, weight: .bold))
+                
+                Spacer()
+                
+                Text("Draw what’s described on your iPad")
+                    .font(.system(size: 72, weight: .bold))
+                    .frame(maxWidth: .infinity)
+                    .multilineTextAlignment(.center)
+                
+                Spacer()
             }
             .padding(32)
         }
