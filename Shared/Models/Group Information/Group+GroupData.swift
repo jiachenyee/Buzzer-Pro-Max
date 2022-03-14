@@ -15,7 +15,7 @@ extension Group {
         Group(number: 4, name: "P1n3Appl3"),
         Group(number: 5, name: "McCakes"),
         Group(number: 6, name: "good morning"),
-        Group(number: 7, name: "7-g2dj"),
+        Group(number: 7, name: "g2dj"),
         Group(number: 8, name: "3584"),
         Group(number: 9, name: "brain ded peeps TvT"),
         Group(number: 10, name: "enzo"),
