@@ -20,6 +20,12 @@ struct ClickerView: View {
         ZStack {
             Color("Team\(team)")
                 .edgesIgnoringSafeArea(.all)
+                .onTapGesture {
+                    communicationManager.send(message: ClickerFlagMessage(team: team,
+                                                                          group: group,
+                                                                          points: 1,
+                                                                          sendDate: .now))
+                }
             
             BouncyYJView {
                 communicationManager.send(message: ClickerFlagMessage(team: team,
@@ -62,12 +68,6 @@ struct ClickerView: View {
             }
             .edgesIgnoringSafeArea(.bottom)
             .foregroundColor(.white)
-        }
-        .onTapGesture {
-            communicationManager.send(message: ClickerFlagMessage(team: team,
-                                                                  group: group,
-                                                                  points: 1,
-                                                                  sendDate: .now))
         }
     }
 }

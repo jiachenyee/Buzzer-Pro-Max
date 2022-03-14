@@ -46,13 +46,15 @@ extension BuzzerManager: MCSessionDelegate {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
-        if let triviaBuzzerMessage = TriviaBuzzerMessage.from(data: data) {
-            print(triviaBuzzerMessage.group)
-        } else if let clickerMessage = ClickerFlagMessage.from(data: data) {
+        if let clickerMessage = ClickerFlagMessage.from(data: data) {
             if let score = gameInfo["team\(clickerMessage.team)Score"],
                let intScore = Int(score) {
-                gameInfo["team\(clickerMessage.team)Score"] = String(intScore + clickerMessage.points)
+                DispatchQueue.main.async { [self] in
+                    gameInfo["team\(clickerMessage.team)Score"] = String(intScore + clickerMessage.points)
+                }
             }
+        } else if let triviaBuzzerMessage = TriviaBuzzerMessage.from(data: data) {
+            print(triviaBuzzerMessage.group)
         }
     }
     
