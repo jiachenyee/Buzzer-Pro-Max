@@ -77,6 +77,8 @@ struct ClickerControlView: View {
 
 Round 1: 300 pts
 Winner: 100 pts each
+Loser: 0 pts each
+
 Round 2 & 3: 600 pts/round
 Winner: 150 pts each
 Loser: 50 pts each

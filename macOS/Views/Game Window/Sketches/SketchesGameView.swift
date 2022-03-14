@@ -11,11 +11,41 @@ struct SketchesGameView: View {
     
     @ObservedObject var buzzerManager: BuzzerManager
     
+    @State var isActive = false
+    
+    @State var isSubmissionStage = false
+    
     var body: some View {
-        if let submissions = buzzerManager.gameInfo["drawingSubmissions"]?.split(separator: "\n") {
+        if isActive {
+            VStack(alignment: .leading) {
+                TimerView(duration: 90)
+                    .frame(height: 30)
+                    .padding(.vertical, 30)
+                
+                VStack(alignment: .leading) {
+                    Text("Challenge 2")
+                        .font(.system(size: 24, weight: .semibold))
+                    
+                    Text("Skill-free Sketching Skirmish")
+                        .font(.system(size: 36, weight: .bold))
+                }
+                .padding(32)
+            }
             
+            if !isSubmissionStage {
+                
+            } else {
+                if let submissions = buzzerManager.gameInfo["drawingSubmissions"]?.split(separator: "\n") {
+                    
+                } else {
+                    Text("Gathering drawings")
+                }
+                
+            }
         } else {
-            Text("Gathering drawings")
+            Image("Holding")
+                .resizable()
+                .scaledToFill()
         }
     }
 }
