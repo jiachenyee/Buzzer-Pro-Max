@@ -13,6 +13,8 @@ struct SketchesControlView: View {
     
     var body: some View {
         Button {
+            buzzerManager.gameInfo["questionsAssignment"] = nil
+            
             let submissionDate = Date.now.addingTimeInterval(90).timeIntervalSince1970
             
             buzzerManager.send(message: CommandMessage(sendDate: .now,
@@ -23,7 +25,7 @@ struct SketchesControlView: View {
                                                        ]))
             
             Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { _ in
-                buzzerManager.gameInfo["questions"]
+                buzzerManager.gameInfo["questionsAssignment"] = ""
             }
         } label: {
             Text("Start")
