@@ -22,11 +22,15 @@ struct GameManagerView: View {
         case .clicker:
             ClickerView(group: group, communicationManager: communicationManager)
         case .sketches:
-            if let guessGroup = communicationManager.commandInfo["drawGroup"] {
+            if let guessGroup = communicationManager.commandInfo["drawGroup"],
+               let sendDate = communicationManager.commandInfo["sendDate"] {
+                
                 if guessGroup == String(group.number) {
                     SketchesItsYours(group: group)
                 } else {
-                    SketchesGuessingView(group: group, communicationManager: communicationManager)
+                    SketchesGuessingView(group: group,
+                                         sendDate: Date(timeIntervalSince1970: Double(sendDate) ?? 0),
+                                         communicationManager: communicationManager)
                 }
             } else {
                 PictionaryView(group: group, communicationManager: communicationManager)

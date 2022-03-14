@@ -10,6 +10,7 @@ import SwiftUI
 struct SketchesGuessingView: View {
     
     var group: Group
+    var sendDate: Date
     
     @State var userResponse = ""
     @ObservedObject var communicationManager: CommunicationManager
@@ -43,12 +44,20 @@ struct SketchesGuessingView: View {
             .edgesIgnoringSafeArea(.bottom)
             .foregroundColor(.white)
         }
+        .onAppear {
+            Timer.scheduledTimer(withTimeInterval: abs(sendDate.timeIntervalSinceNow), repeats: false) { _ in
+                communicationManager.send(message: SketchGuessMessage(group: group,
+                                                                      sendDate: .now,
+                                                                      guess: userResponse))
+            }
+        }
     }
 }
 
 struct SketchesGuessingView_Previews: PreviewProvider {
     static var previews: some View {
         SketchesGuessingView(group: Group(number: 1, name: "cold chocolate"),
+                             sendDate: Date(),
                              communicationManager: CommunicationManager())
     }
 }
