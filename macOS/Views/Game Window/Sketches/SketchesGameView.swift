@@ -58,7 +58,6 @@ struct SketchesGameView: View {
                 .onAppear {
                     Timer.scheduledTimer(withTimeInterval: 90, repeats: false) { _ in
                         isSubmissionStage = true
-                        print("fuehiwds")
                     }
                 }
             }
