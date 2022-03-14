@@ -94,10 +94,52 @@ Max Points: 1500
                     
                     Text("Pro Mode")
                         .font(.system(size: 16, weight: .bold))
+                    
                     Toggle(isOn: $isProModeEnabled) {
                         Text("*Pro Mode* switches the score distribution from **100-0** to **150-50**.")
                             .font(.system(size: 16, weight: .bold))
                     }
+                    Spacer()
+                    
+                    Button {
+                        if let team1ScoreRaw = buzzerManager.gameInfo["team1Score"],
+                           let team1Score = Int(team1ScoreRaw),
+                           let team1Groups = buzzerManager.gameInfo["team1Members"]?.split(separator: ","),
+                           let team2ScoreRaw = buzzerManager.gameInfo["team2Score"],
+                           let team2Score = Int(team2ScoreRaw) {
+                            
+                            let team1Win = team1Score >= team2Score
+                            let team2Win = team2Score >= team1Score
+                            
+                            buzzerManager.groupScores = buzzerManager.groupScores.map { groupScore in
+                                var mutableGS = groupScore
+                                
+                                if team1Groups.contains("\(groupScore.group.number)") {
+                                    if team1Win {
+                                        mutableGS.score += isProModeEnabled ? 150 : 100
+                                    } else {
+                                        mutableGS.score += isProModeEnabled ? 50 : 0
+                                    }
+                                } else {
+                                    if team2Win {
+                                        mutableGS.score += isProModeEnabled ? 150 : 100
+                                    } else {
+                                        mutableGS.score += isProModeEnabled ? 50 : 0
+                                    }
+                                }
+                                
+                                return mutableGS
+                            }
+                        }
+                        
+                    } label: {
+                        Text("Assign Points")
+                            .frame(maxWidth: .infinity)
+                            .padding()
+                            .background(.blue.opacity(0.25))
+                    }
+                    .buttonStyle(.plain)
+                    
                 }
             }
         }

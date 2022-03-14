@@ -68,6 +68,7 @@ struct ClickerView: View {
                 }
                 .edgesIgnoringSafeArea(.bottom)
                 .foregroundColor(.white)
+                .allowsHitTesting(false)
             }
         } else {
             HoldingView()
