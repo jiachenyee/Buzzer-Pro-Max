@@ -9,3 +9,6 @@ identifier_name:
     - x
     - y
     - id
+
+excluded:
+  - Shared/Models/Game Information
