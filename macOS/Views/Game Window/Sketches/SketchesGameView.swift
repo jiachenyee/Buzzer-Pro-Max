@@ -40,7 +40,7 @@ struct SketchesGameView: View {
                         Spacer()
                     } else {
                         
-                        Text("Draw what’s described on your iPad")
+                        Text("Collating Responses... give it a second.")
                             .font(.system(size: 72, weight: .bold))
                             .frame(maxWidth: .infinity)
                             .multilineTextAlignment(.center)
@@ -58,6 +58,7 @@ struct SketchesGameView: View {
                 .onAppear {
                     Timer.scheduledTimer(withTimeInterval: 90, repeats: false) { _ in
                         isSubmissionStage = true
+                        print("fuehiwds")
                     }
                 }
             }
