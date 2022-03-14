@@ -72,6 +72,11 @@ struct CentralControlView: View {
                 
                 Button {
                     buzzerManager.gameState = .holding
+                    buzzerManager.send(message: CommandMessage(sendDate: Date(),
+                                                               activeDate: Date(),
+                                                               gameState: .holding,
+                                                               commandInfo: [:]))
+                    
                 } label: {
                     Text("Briefing")
                         .font(.system(size: 24, weight: .regular))
