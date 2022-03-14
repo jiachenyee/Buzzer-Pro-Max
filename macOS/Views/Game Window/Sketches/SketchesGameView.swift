@@ -16,38 +16,55 @@ struct SketchesGameView: View {
     @State var isSubmissionStage = false
     
     var body: some View {
-        VStack(alignment: .leading) {
-            TimerView(duration: 90)
-                .frame(height: 30)
-                .padding(.vertical, 30)
-            
+        if let questionAssignment = buzzerManager.gameInfo["questionsAssignment"] {
             VStack(alignment: .leading) {
-                Text("Challenge 2")
-                    .font(.system(size: 24, weight: .semibold))
+                TimerView(duration: 90)
+                    .frame(height: 30)
+                    .padding(.vertical, 30)
                 
-                Text("Skill-free Sketching Skirmish")
-                    .font(.system(size: 36, weight: .bold))
-                
-                Spacer()
-                
-                Text("Draw what’s described on your iPad")
-                    .font(.system(size: 72, weight: .bold))
-                    .frame(maxWidth: .infinity)
-                    .multilineTextAlignment(.center)
-                
-                Spacer()
+                VStack(alignment: .leading) {
+                    Text("Challenge 2")
+                        .font(.system(size: 24, weight: .semibold))
+                    
+                    Text("Skill-free Sketching Skirmish")
+                        .font(.system(size: 36, weight: .bold))
+                    
+                    Spacer()
+                    
+                    if !isSubmissionStage {
+                        Text("Draw what’s described on your iPad")
+                            .font(.system(size: 72, weight: .bold))
+                            .frame(maxWidth: .infinity)
+                            .multilineTextAlignment(.center)
+                        
+                        Spacer()
+                    } else {
+                        
+                        Text("Draw what’s described on your iPad")
+                            .font(.system(size: 72, weight: .bold))
+                            .frame(maxWidth: .infinity)
+                            .multilineTextAlignment(.center)
+                        
+                        Spacer()
+                        
+                        if let submissions = buzzerManager.gameInfo["drawingSubmissions"]?.split(separator: "\n") {
+                            Text("\(submissions.count) Submissions")
+                        } else {
+                            Text("No Submissions")
+                        }
+                    }
+                }
+                .padding(32)
+                .onAppear {
+                    Timer.scheduledTimer(withTimeInterval: 90, repeats: false) { _ in
+                        isSubmissionStage = true
+                    }
+                }
             }
-            .padding(32)
-        }
-        
-        if !isSubmissionStage {
-            
         } else {
-            if let submissions = buzzerManager.gameInfo["drawingSubmissions"]?.split(separator: "\n") {
-                
-            } else {
-                Text("Gathering drawings")
-            }
+            Image("Holding")
+                .resizable()
+                .scaledToFill()
         }
     }
 }
