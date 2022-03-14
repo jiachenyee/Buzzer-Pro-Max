@@ -30,7 +30,7 @@ class BuzzerManager: NSObject, ObservableObject {
     }
     @Published var gameHolding = false {
         didSet {
-            addLog(emoji: "👀", message: "Game holding: \(leaderboardsHolding)")
+            addLog(emoji: "👀", message: "Game holding: \(gameHolding)")
         }
     }
     
