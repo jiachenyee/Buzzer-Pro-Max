@@ -44,6 +44,8 @@ class BuzzerManager: NSObject, ObservableObject {
     
     @Published var gameInfo: [String: String] = [:]
     
+    @Published var briefingSlide = 0
+    
     var session: MCSession?
     var advertiserAssistant: MCNearbyServiceAdvertiser?
     
