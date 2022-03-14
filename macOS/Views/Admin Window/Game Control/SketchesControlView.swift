@@ -12,7 +12,11 @@ struct SketchesControlView: View {
     @ObservedObject var buzzerManager: BuzzerManager
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            buzzerManager.send(message: CommandMessage(sendDate: .now, activeDate: .now, gameState: .sketches, commandInfo: [:]))
+        } label: {
+            Text("Start")
+        }
     }
 }
 
