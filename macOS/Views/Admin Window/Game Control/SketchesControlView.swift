@@ -18,6 +18,6 @@ struct SketchesControlView: View {
 
 struct SketchesControlView_Previews: PreviewProvider {
     static var previews: some View {
-        SketchesControlView()
+        SketchesControlView(buzzerManager: BuzzerManager())
     }
 }
