@@ -22,7 +22,15 @@ struct GameManagerView: View {
         case .clicker:
             ClickerView(group: group, communicationManager: communicationManager)
         case .sketches:
-            PictionaryView(group: group, communicationManager: communicationManager)
+            if let guessGroup = communicationManager.commandInfo["drawGroup"] {
+                if guessGroup == String(group.number) {
+                    SketchesItsYours(group: group)
+                } else {
+                    SketchesGuessingView(group: group, communicationManager: communicationManager)
+                }
+            } else {
+                PictionaryView(group: group, communicationManager: communicationManager)
+            }
         }
     }
 }
