@@ -18,6 +18,6 @@ struct BriefingControlView: View {
 
 struct BriefingControlView_Previews: PreviewProvider {
     static var previews: some View {
-        BriefingControlView()
+        BriefingControlView(buzzerManager: BuzzerManager())
     }
 }
