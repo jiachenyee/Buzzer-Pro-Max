@@ -11,6 +11,7 @@ struct TriviaControlView: View {
     
     @ObservedObject var buzzerManager: BuzzerManager
     @State var currentQuestion = 0
+    @State var hasGameStarted = false
     @State var isNextQuestionButtonDisabled = false
     @State var isReopenButtonDisabled = true
     var body: some View {
@@ -21,30 +22,38 @@ struct TriviaControlView: View {
                     .multilineTextAlignment(.leading)
                     .padding(.bottom)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text("1 - \(TriviaQuestion.all[currentQuestion].title)")
-                    .font(.system(size: 24, weight: .bold))
-                    .frame(height: 100, alignment: .top)
-                
-                Button {
-                    if currentQuestion < 9 {
-                        currentQuestion += 1
-                    } else {
-                        isNextQuestionButtonDisabled = true
+                if !hasGameStarted {
+                    Button{
+                        hasGameStarted = true
+                    } label: {
+                        Text("Start Game")
                     }
-                } label: {
-                    Text("Next Question")
-                }.disabled(isNextQuestionButtonDisabled)
-                
-                Button {
-                    #warning("need to implement")
-                } label: {
-                    Text("Reopen for answering")
-                }.disabled(isReopenButtonDisabled)
-                ScrollView {
-                    Text("Answer:\n\(TriviaQuestion.all[currentQuestion].answer)")
-                        .font(.system(size: 16))
+                } else {
+                    Text("1 - \(TriviaQuestion.all[currentQuestion].title)")
+                        .font(.system(size: 24, weight: .bold))
+                        .frame(height: 100, alignment: .top)
+                    
+                    Button {
+                        if currentQuestion < 9 {
+                            currentQuestion += 1
+                        } else {
+                            isNextQuestionButtonDisabled = true
+                        }
+                    } label: {
+                        Text("Next Question")
+                    }.disabled(isNextQuestionButtonDisabled)
+                    
+                    Button {
+                        #warning("need to implement")
+                    } label: {
+                        Text("Reopen for answering")
+                    }.disabled(isReopenButtonDisabled)
+                    ScrollView {
+                        Text("Answer:\n\(TriviaQuestion.all[currentQuestion].answer)")
+                            .font(.system(size: 16))
+                    }
                 }
-                
+                    
 //                List(TriviaQuestion.all, id: \.title) { triviaQuestion in
 //                    Text("\(triviaQuestion.title) - Answer: \(triviaQuestion.answer)")
 //                }
