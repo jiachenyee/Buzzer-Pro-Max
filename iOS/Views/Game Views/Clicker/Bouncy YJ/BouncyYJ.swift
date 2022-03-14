@@ -37,8 +37,8 @@ class BouncyYJ: UIView {
         dynamics.friction = 0
         animator.addBehavior(dynamics)
         
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { _ in
-            self.insert(imageName: ["ZK", "ZK", "ZK", "YJ"].randomElement()!)
+        Timer.scheduledTimer(withTimeInterval: 0.4, repeats: true) { _ in
+            self.insert(imageName: ["ZK", "ZK", "ZK", "YJ", "YJ"].randomElement()!)
         }
     }
     

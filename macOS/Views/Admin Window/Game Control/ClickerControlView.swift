@@ -28,14 +28,16 @@ struct ClickerControlView: View {
                     "\($0),\($1.number)"
                 }.dropFirst()
                 
-                buzzerManager.gameInfo = [
-                    "team1Members": String(team1Members),
-                    "team2Members": String(team2Members),
-                    "team1Score": String(100),
-                    "team2Score": String(100)
-                ]
-                
-                buzzerManager.gameState = .clicker
+                Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { _ in
+                    buzzerManager.gameInfo = [
+                        "team1Members": String(team1Members),
+                        "team2Members": String(team2Members),
+                        "team1Score": String(100),
+                        "team2Score": String(100)
+                    ]
+                    
+                    buzzerManager.gameState = .clicker
+                }
                 
                 buzzerManager.send(message: CommandMessage(sendDate: .now,
                                                            activeDate: .now.addingTimeInterval(2.5),
@@ -44,6 +46,11 @@ struct ClickerControlView: View {
                                                             "team1Members": String(team1Members),
                                                             "team2Members": String(team2Members)
                                                            ]))
+                
+                buzzerManager.send(message: CommandMessage(sendDate: .now,
+                                                           activeDate: .now.addingTimeInterval(2.5 + 60),
+                                                           gameState: .holding,
+                                                           commandInfo: [:]))
             }
             gameStarted.toggle()
         } label: {
