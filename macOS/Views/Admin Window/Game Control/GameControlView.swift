@@ -12,7 +12,12 @@ struct GameControlView: View {
     @ObservedObject var buzzerManager: BuzzerManager
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        switch buzzerManager.gameState {
+        case .holding: EmptyView() // Briefing
+        case .trivia: TriviaControlView(buzzerManager: buzzerManager)
+        case .clicker: ClickerControlView(buzzerManager: buzzerManager)
+        case .sketches: EmptyView()
+        }
     }
 }
 
