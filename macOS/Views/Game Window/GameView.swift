@@ -19,7 +19,7 @@ struct GameView: View {
             case .holding: EmptyView() // briefing
             case .trivia: TriviaManagerView(buzzerManager: buzzerManager)
             case .clicker: ClickerView(buzzerManager: buzzerManager)
-            case .sketches: EmptyView() 
+            case .sketches: SketchesGameView()
             }
         }
         .navigationTitle("Game")
