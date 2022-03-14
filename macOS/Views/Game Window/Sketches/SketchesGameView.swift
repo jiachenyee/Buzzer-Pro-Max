@@ -16,36 +16,29 @@ struct SketchesGameView: View {
     @State var isSubmissionStage = false
     
     var body: some View {
-        if isActive {
-            VStack(alignment: .leading) {
-                TimerView(duration: 90)
-                    .frame(height: 30)
-                    .padding(.vertical, 30)
-                
-                VStack(alignment: .leading) {
-                    Text("Challenge 2")
-                        .font(.system(size: 24, weight: .semibold))
-                    
-                    Text("Skill-free Sketching Skirmish")
-                        .font(.system(size: 36, weight: .bold))
-                }
-                .padding(32)
-            }
+        VStack(alignment: .leading) {
+            TimerView(duration: 90)
+                .frame(height: 30)
+                .padding(.vertical, 30)
             
-            if !isSubmissionStage {
+            VStack(alignment: .leading) {
+                Text("Challenge 2")
+                    .font(.system(size: 24, weight: .semibold))
+                
+                Text("Skill-free Sketching Skirmish")
+                    .font(.system(size: 36, weight: .bold))
+            }
+            .padding(32)
+        }
+        
+        if !isSubmissionStage {
+            
+        } else {
+            if let submissions = buzzerManager.gameInfo["drawingSubmissions"]?.split(separator: "\n") {
                 
             } else {
-                if let submissions = buzzerManager.gameInfo["drawingSubmissions"]?.split(separator: "\n") {
-                    
-                } else {
-                    Text("Gathering drawings")
-                }
-                
+                Text("Gathering drawings")
             }
-        } else {
-            Image("Holding")
-                .resizable()
-                .scaledToFill()
         }
     }
 }

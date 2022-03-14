@@ -16,11 +16,15 @@ struct SketchesControlView: View {
             let submissionDate = Date.now.addingTimeInterval(90).timeIntervalSince1970
             
             buzzerManager.send(message: CommandMessage(sendDate: .now,
-                                                       activeDate: .now,
+                                                       activeDate: .now.addingTimeInterval(2.5),
                                                        gameState: .sketches,
                                                        commandInfo: [
                                                         "submissionDate": String(submissionDate)
                                                        ]))
+            
+            Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { _ in
+                buzzerManager.gameInfo["questions"]
+            }
         } label: {
             Text("Start")
         }
