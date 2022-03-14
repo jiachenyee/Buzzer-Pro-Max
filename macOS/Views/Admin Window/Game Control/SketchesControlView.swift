@@ -13,7 +13,14 @@ struct SketchesControlView: View {
     
     var body: some View {
         Button {
-            buzzerManager.send(message: CommandMessage(sendDate: .now, activeDate: .now, gameState: .sketches, commandInfo: [:]))
+            let submissionDate = Date.now.addingTimeInterval(90).timeIntervalSince1970
+            
+            buzzerManager.send(message: CommandMessage(sendDate: .now,
+                                                       activeDate: .now,
+                                                       gameState: .sketches,
+                                                       commandInfo: [
+                                                        "submissionDate": String(submissionDate)
+                                                       ]))
         } label: {
             Text("Start")
         }

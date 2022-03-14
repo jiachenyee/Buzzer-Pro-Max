@@ -46,6 +46,9 @@ extension BuzzerManager: MCSessionDelegate {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        
+        addLog(emoji: "🗣", message: "Received message from Group \(peerID.displayName)")
+        
         if let clickerMessage = ClickerFlagMessage.from(data: data) {
             if let score = gameInfo["team\(clickerMessage.team)Score"],
                let intScore = Int(score) {
@@ -53,6 +56,12 @@ extension BuzzerManager: MCSessionDelegate {
                     gameInfo["team\(clickerMessage.team)Score"] = String(intScore + clickerMessage.points)
                 }
             }
+        } else if let sketchMessage = SketchMessage.from(data: data) {
+            #warning("Incomplete implementation")
+            
+        } else if let sketchGuessMessage = SketchGuessMessage.from(data: data) {
+            #warning("Incomplete implementation")
+            
         } else if let triviaBuzzerMessage = TriviaBuzzerMessage.from(data: data) {
             print(triviaBuzzerMessage.group)
             #warning("Handle buzzer input")
