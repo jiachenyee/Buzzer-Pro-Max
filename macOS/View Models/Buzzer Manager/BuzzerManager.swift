@@ -68,7 +68,9 @@ class BuzzerManager: NSObject, ObservableObject {
                                               includingFractionalSeconds: true,
                                               timeZone: .current))
         
-        logs = "\(emoji) \(date) \(message)\n" + logs
+        DispatchQueue.main.async { [self] in
+            logs = "\(emoji) \(date) \(message)\n" + logs
+        }
         
         let logURL = FileManager.default.homeDirectoryForCurrentUser.appendingPathComponent("Downloads/logs.txt")
         

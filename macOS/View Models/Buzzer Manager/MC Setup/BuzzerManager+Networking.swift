@@ -12,7 +12,12 @@ extension BuzzerManager {
     func send(message: Messagable) {
         if let session = session,
            let data = message.toJSONData() {
-            try? session.send(data, toPeers: session.connectedPeers, with: .reliable)
+            do {
+                try session.send(data, toPeers: session.connectedPeers, with: .reliable)
+                addLog(emoji: "💬", message: "Sent \(data) to everyone")
+            } catch {
+                addLog(emoji: "🔥", message: "Failed to send: \(error.localizedDescription)")
+            }
         }
     }
     

@@ -54,10 +54,12 @@ class CommunicationManager: NSObject, ObservableObject {
         if secondsUntilActive <= 0.5 {
             action()
         } else {
-            Timer.scheduledTimer(withTimeInterval: secondsUntilActive,
-                                 repeats: false) { _ in
+            DispatchQueue.global(qos: .default)
+                .asyncAfter(deadline: .now()
+                                .advanced(by: .milliseconds(Int(secondsUntilActive * 1000))),
+                            execute: {
                 action()
-            }
+            })
         }
     }
     
@@ -86,7 +88,7 @@ extension CommunicationManager: MCBrowserViewControllerDelegate {
     }
     
     func browserViewControllerWasCancelled(_ browserViewController: MCBrowserViewController) {
-        session?.disconnect()
+//        session?.disconnect()
         browserViewController.dismiss(animated: true)
     }
 }

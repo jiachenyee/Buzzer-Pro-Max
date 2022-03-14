@@ -14,9 +14,10 @@ struct ClickerView: View {
     @ObservedObject var communicationManager: CommunicationManager
     
     var body: some View {
+        let team1Members = communicationManager.commandInfo["team1Members"]?.split(separator: ",").map { String($0) }
+        let team = team1Members!.contains(String(group.number)) ? 1 : 2
+        
         ZStack {
-            let team = Int(communicationManager.commandInfo["team"]!)!
-            
             Color("Team\(team)")
                 .edgesIgnoringSafeArea(.all)
             
@@ -63,10 +64,10 @@ struct ClickerView: View {
             .foregroundColor(.white)
         }
         .onTapGesture {
-            communicationManager.send(message: ClickerFlagMessage(team: Int(communicationManager.commandInfo["team"]!)!,
-                                                              group: group,
-                                                              points: 1,
-                                                              sendDate: .now))
+            communicationManager.send(message: ClickerFlagMessage(team: team,
+                                                                  group: group,
+                                                                  points: 1,
+                                                                  sendDate: .now))
         }
     }
 }
