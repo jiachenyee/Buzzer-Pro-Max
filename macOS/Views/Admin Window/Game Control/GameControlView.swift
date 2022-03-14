@@ -13,10 +13,10 @@ struct GameControlView: View {
     
     var body: some View {
         switch buzzerManager.gameState {
-        case .holding: EmptyView() // Briefing
+        case .holding: BriefingControlView(buzzerManager: buzzerManager)
         case .trivia: TriviaControlView(buzzerManager: buzzerManager)
         case .clicker: ClickerControlView(buzzerManager: buzzerManager)
-        case .sketches: EmptyView()
+        case .sketches: SketchesControlView(buzzerManager: buzzerManager)
         }
     }
 }
