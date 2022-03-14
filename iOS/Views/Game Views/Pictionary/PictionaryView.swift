@@ -23,7 +23,7 @@ struct PictionaryView: View {
             VStack {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Text("Challenge 3")
+                        Text("Challenge 2")
                             .font(.system(size: 36, weight: .bold))
                         
                         Text("Skill-free Sketching Skirmish")
