@@ -59,6 +59,15 @@ extension BuzzerManager: MCSessionDelegate {
         } else if let sketchMessage = SketchMessage.from(data: data) {
             #warning("Incomplete implementation")
             
+            let sketch = sketchMessage.sketch
+            
+            let image = sketch.image(from: sketch.bounds, scale: 2)
+                .cgImage(forProposedRect: nil, context: nil, hints: nil)
+            
+            let pngData = NSBitmapImageRep(cgImage: image!).representation(using: .png, properties: [:])
+            
+            try? pngData?.write(to: URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Downloads/Drawings/\(sketchMessage.group.number)-\(UUID().uuidString).png"))
+            
         } else if let sketchGuessMessage = SketchGuessMessage.from(data: data) {
             #warning("Incomplete implementation")
             
