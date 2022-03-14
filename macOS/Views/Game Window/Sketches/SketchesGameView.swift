@@ -8,13 +8,20 @@
 import SwiftUI
 
 struct SketchesGameView: View {
+    
+    @ObservedObject var buzzerManager: BuzzerManager
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if let submissions = buzzerManager.gameInfo["drawingSubmissions"]?.split(separator: "\n") {
+            
+        } else {
+            Text("Gathering drawings")
+        }
     }
 }
 
 struct SketchesGameView_Previews: PreviewProvider {
     static var previews: some View {
-        SketchesGameView()
+        SketchesGameView(buzzerManager: BuzzerManager())
     }
 }
