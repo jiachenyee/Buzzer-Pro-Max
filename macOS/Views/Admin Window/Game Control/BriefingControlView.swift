@@ -12,7 +12,92 @@ struct BriefingControlView: View {
     @ObservedObject var buzzerManager: BuzzerManager
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            ScrollView {
+                
+                VStack {
+                    Button {
+                        buzzerManager.briefingSlide = 0
+                    } label: {
+                        Image("Briefing0")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(4)
+                            .padding(.horizontal, 8)
+                            .background(Color(NSColor.darkGray))
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    .buttonStyle(.borderless)
+                    .padding(.bottom)
+                    
+                    Button {
+                        buzzerManager.briefingSlide = 1
+                    } label: {
+                        Image("Briefing1")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(4)
+                            .padding(.horizontal, 8)
+                            .background(Color(NSColor.darkGray))
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    .buttonStyle(.borderless)
+                    .padding(.bottom)
+                    
+                    Button {
+                        buzzerManager.briefingSlide = 2
+                    } label: {
+                        Image("Briefing2")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(4)
+                            .padding(.horizontal, 8)
+                            .background(Color(NSColor.darkGray))
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    .buttonStyle(.borderless)
+                    .padding(.bottom)
+                    
+                    Button {
+                        buzzerManager.briefingSlide = 3
+                    } label: {
+                        Image("Briefing3")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(4)
+                            .padding(.horizontal, 8)
+                            .background(Color(NSColor.darkGray))
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    .buttonStyle(.borderless)
+                    .padding(.bottom)
+                    
+                    Button {
+                        buzzerManager.briefingSlide = 4
+                    } label: {
+                        Image("Briefing4")
+                            .resizable()
+                            .scaledToFit()
+                            .padding(4)
+                            .padding(.horizontal, 8)
+                            .background(Color(NSColor.darkGray))
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+                    .buttonStyle(.borderless)
+                    .padding(.bottom)
+                    
+                }.frame(maxWidth: 400)
+            }
+            Image("Briefing\(buzzerManager.briefingSlide)")
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: .infinity)
+        }
     }
 }
 

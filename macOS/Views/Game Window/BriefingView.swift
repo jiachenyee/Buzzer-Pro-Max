@@ -8,13 +8,18 @@
 import SwiftUI
 
 struct BriefingView: View {
+    
+    @ObservedObject var buzzerManager: BuzzerManager
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image("Briefing\(buzzerManager.briefingSlide)")
+            .resizable()
+            .scaledToFill()
     }
 }
 
 struct BriefingView_Previews: PreviewProvider {
     static var previews: some View {
-        BriefingView()
+        BriefingView(buzzerManager: BuzzerManager())
     }
 }

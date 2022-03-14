@@ -76,6 +76,7 @@
 		32C11AAF27D860FD00561F2B /* iPadMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11AAD27D860FD00561F2B /* iPadMessage.swift */; };
 		32C11AB127D8610700561F2B /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11AB027D8610700561F2B /* Sender.swift */; };
 		32C11AB227D8610700561F2B /* Sender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32C11AB027D8610700561F2B /* Sender.swift */; };
+		A0021DFE27DFAB84006FA28B /* BriefingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0021DFD27DFAB84006FA28B /* BriefingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +138,7 @@
 		32C11AAA27D85F9A00561F2B /* TriviaMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaMessage.swift; sourceTree = "<group>"; };
 		32C11AAD27D860FD00561F2B /* iPadMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadMessage.swift; sourceTree = "<group>"; };
 		32C11AB027D8610700561F2B /* Sender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sender.swift; sourceTree = "<group>"; };
+		A0021DFD27DFAB84006FA28B /* BriefingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,6 +292,7 @@
 			isa = PBXGroup;
 			children = (
 				329F49E727D9F507004C2D84 /* GameView.swift */,
+				A0021DFD27DFAB84006FA28B /* BriefingView.swift */,
 				325C986027DE6EC800B7F3A6 /* Trivia */,
 				325C986827DE812000B7F3A6 /* Clicker */,
 				325C987227DF006B00B7F3A6 /* Sketches */,
@@ -703,6 +706,7 @@
 				32C11AA527D8564700561F2B /* Messagable.swift in Sources */,
 				32C11A8627D7A10800561F2B /* TriviaQuestion.swift in Sources */,
 				325C982B27DC742600B7F3A6 /* BuzzerManager+MCNearbyServiceAdvertiserDelegate.swift in Sources */,
+				A0021DFE27DFAB84006FA28B /* BriefingView.swift in Sources */,
 				325C986F27DEC43000B7F3A6 /* TriviaControlView.swift in Sources */,
 				32C11A9F27D83B5800561F2B /* FlagView.swift in Sources */,
 				325C985D27DE51E900B7F3A6 /* CentralControlPointsView.swift in Sources */,
