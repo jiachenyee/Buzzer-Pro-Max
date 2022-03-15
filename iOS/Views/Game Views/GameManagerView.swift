@@ -26,7 +26,7 @@ struct GameManagerView: View {
                let sendDate = communicationManager.commandInfo["sendDate"] {
                 
                 if guessGroup == String(group.number) {
-                    SketchesItsYours(group: group)
+                    SketchesItsYours(sendDate: Date(timeIntervalSince1970: Double(sendDate) ?? 0), group: group, communicationManager: communicationManager)
                 } else {
                     SketchesGuessingView(group: group,
                                          sendDate: Date(timeIntervalSince1970: Double(sendDate) ?? 0),
