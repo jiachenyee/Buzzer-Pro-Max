@@ -29,7 +29,7 @@ struct TriviaControlView: View {
                                                                    activeDate: .now.addingTimeInterval(2.5),
                                                                    gameState: .trivia,
                                                                    commandInfo: ["questionNo": "0"]))
-                        Timer.scheduledTimer(withTimeInterval: 2.3, repeats: false) { _ in
+                        Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
                             hasGameStarted = true
                             buzzerManager.gameInfo["questionNo"] = "0"
                         }
@@ -46,7 +46,7 @@ struct TriviaControlView: View {
                             
                             if question < 9 {
                                 buzzerManager.send(message: CommandMessage(sendDate: .now, activeDate: .now.addingTimeInterval(2.5), gameState: .trivia, commandInfo: ["questionNo": "\(question+1)"]))
-                                Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { _ in
+                                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
                                     buzzerManager.gameInfo["questionNo"] = "\(question+1)"
                                 }
                             } else {
@@ -67,11 +67,6 @@ struct TriviaControlView: View {
                             .font(.system(size: 16))
                     }
                 }
-                
-                //                List(TriviaQuestion.all, id: \.title) { questionNo in
-                //                    Text("\(questionNo.title) - Answer: \(questionNo.answer)")
-                //                }
-                //                    .frame(maxWidth: .infinity)
             }.frame(maxWidth: .infinity)
                 .padding()
             VStack(alignment: .leading) {

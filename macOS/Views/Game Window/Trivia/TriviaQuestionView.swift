@@ -21,6 +21,11 @@ struct TriviaQuestionView: View {
                 TimerView(duration: triviaQuestion.duration)
                     .frame(height: 30)
                     .padding(.vertical, 30)
+                    .onAppear {
+                        Timer.scheduledTimer(withTimeInterval: triviaQuestion.duration, repeats: false) { _ in
+                            isAnsweringTime = false
+                        }
+                    }
             }
             VStack(alignment: .leading) {
                 Text("Challenge 0")
@@ -41,11 +46,6 @@ struct TriviaQuestionView: View {
                 .font(.system(size: 28, weight: .bold))
                 .frame(maxWidth: .infinity)
                 .padding(.bottom, 32)
-        }
-        .onAppear {
-            Timer.scheduledTimer(withTimeInterval: triviaQuestion.duration, repeats: false) { _ in
-                isAnsweringTime = false
-            }
         }
         .onChange(of: buzzerManager.gameInfo["questionNo"]) { _ in
             isAnsweringTime = true
