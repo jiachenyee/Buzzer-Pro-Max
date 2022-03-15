@@ -62,6 +62,8 @@ struct SketchesGameView: View {
                 }
                 .padding(32)
                 .onAppear {
+                    isSubmissionStage = false
+                    
                     Timer.scheduledTimer(withTimeInterval: 90, repeats: false) { _ in
                         isSubmissionStage = true
                     }
