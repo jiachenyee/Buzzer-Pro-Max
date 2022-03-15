@@ -39,18 +39,24 @@ struct SketchesGameView: View {
                         
                         Spacer()
                     } else {
-                        
-                        Text("Collating Responses... give it a second.")
-                            .font(.system(size: 72, weight: .bold))
-                            .frame(maxWidth: .infinity)
-                            .multilineTextAlignment(.center)
-                        
-                        Spacer()
-                        
-                        if let submissions = buzzerManager.gameInfo["drawingSubmissions"]?.split(separator: "\n") {
-                            Text("\(submissions.count) Submissions")
+                        if let displayDrawing = buzzerManager.gameInfo["displayDrawing"]?.split(separator: "\n") {
+                            ZStack(alignment: .center) {
+                                Color.clear
+                                AsyncImage(url: URL(fileURLWithPath: String(displayDrawing[0])))
+                            }
                         } else {
-                            Text("No Submissions")
+                            Text("Collating Responses... give it a second.")
+                                .font(.system(size: 72, weight: .bold))
+                                .frame(maxWidth: .infinity)
+                                .multilineTextAlignment(.center)
+                            
+                            Spacer()
+                            
+                            if let submissions = buzzerManager.gameInfo["drawingSubmissions"]?.split(separator: "\n") {
+                                Text("\(submissions.count) Submissions")
+                            } else {
+                                Text("No Submissions")
+                            }
                         }
                     }
                 }
