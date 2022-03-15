@@ -10,10 +10,10 @@ import SwiftUI
 struct TriviaControlView: View {
     
     @ObservedObject var buzzerManager: BuzzerManager
-    @State var currentQuestion = 0
     @State var hasGameStarted = false
     @State var isNextQuestionButtonDisabled = false
     @State var isReopenButtonDisabled = true
+    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -23,52 +23,66 @@ struct TriviaControlView: View {
                     .padding(.bottom)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 if !hasGameStarted {
-                    Button{
-                        hasGameStarted = true
+                    Button {
+                        buzzerManager.gameInfo["questionNo"] = nil
+                        buzzerManager.send(message: CommandMessage(sendDate: .now,
+                                                                   activeDate: .now.addingTimeInterval(2.5),
+                                                                   gameState: .trivia,
+                                                                   commandInfo: ["questionNo": "0"]))
+                        Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false) { _ in
+                            hasGameStarted = true
+                            buzzerManager.gameInfo["questionNo"] = "0"
+                        }
                     } label: {
                         Text("Start Game")
                     }
                 } else {
-                    Text("1 - \(TriviaQuestion.all[currentQuestion].title)")
+                    Text("\(Int(buzzerManager.gameInfo["questionNo"]!)!+1) - \(TriviaQuestion.all[Int(buzzerManager.gameInfo["questionNo"]!)!].title)")
                         .font(.system(size: 24, weight: .bold))
                         .frame(height: 100, alignment: .top)
                     
                     Button {
-                        if currentQuestion < 9 {
-                            currentQuestion += 1
-                        } else {
-                            isNextQuestionButtonDisabled = true
+                        if let question = Int(buzzerManager.gameInfo["questionNo"]!) {
+                            
+                            if question < 9 {
+                                buzzerManager.send(message: CommandMessage(sendDate: .now, activeDate: .now.addingTimeInterval(2.5), gameState: .trivia, commandInfo: ["questionNo": "\(question+1)"]))
+                                Timer.scheduledTimer(withTimeInterval: 2.5, repeats: false){ _ in
+                                    buzzerManager.gameInfo["questionNo"] = "\(question+1)"
+                                }
+                            } else {
+                                isNextQuestionButtonDisabled = true
+                            }
+                            
                         }
                     } label: {
                         Text("Next Question")
                     }.disabled(isNextQuestionButtonDisabled)
-                    
                     Button {
                         #warning("need to implement")
                     } label: {
                         Text("Reopen for answering")
                     }.disabled(isReopenButtonDisabled)
                     ScrollView {
-                        Text("Answer:\n\(TriviaQuestion.all[currentQuestion].answer)")
+                        Text("Answer:\n\(TriviaQuestion.all[Int(buzzerManager.gameInfo["questionNo"]!)!].answer)")
                             .font(.system(size: 16))
                     }
                 }
-                    
-//                List(TriviaQuestion.all, id: \.title) { triviaQuestion in
-//                    Text("\(triviaQuestion.title) - Answer: \(triviaQuestion.answer)")
-//                }
-//                    .frame(maxWidth: .infinity)
+                
+                //                List(TriviaQuestion.all, id: \.title) { questionNo in
+                //                    Text("\(questionNo.title) - Answer: \(questionNo.answer)")
+                //                }
+                //                    .frame(maxWidth: .infinity)
             }.frame(maxWidth: .infinity)
-            .padding()
+                .padding()
             VStack(alignment: .leading) {
                 Text("Responses")
                     .font(.system(size: 24, weight: .bold))
                     .frame(height: 60, alignment: .top)
                     .padding()
-                List(TriviaQuestion.all, id: \.title) { triviaQuestion in
-                    Text("\(triviaQuestion.title) - Answer: \(triviaQuestion.answer)")
+                List(TriviaQuestion.all, id: \.title) { questionNo in
+                    Text("\(questionNo.title) - Answer: \(questionNo.answer)")
                 }
-                    .frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity)
                 
             }.frame(width: 500)
                 .padding()
