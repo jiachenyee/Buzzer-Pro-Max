@@ -14,7 +14,7 @@ struct TriviaManagerView: View {
     var body: some View {
         if let questionNo = buzzerManager.gameInfo["questionNo"],
             let questionIndex = Int(questionNo) {
-            TriviaQuestionView(triviaQuestion: TriviaQuestion.all[questionIndex])
+            TriviaQuestionView(buzzerManager: buzzerManager, triviaQuestion: TriviaQuestion.all[questionIndex])
         } else {
             Image("Holding")
                 .resizable()
