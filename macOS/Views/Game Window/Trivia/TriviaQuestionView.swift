@@ -9,16 +9,24 @@ import SwiftUI
 
 struct TriviaQuestionView: View {
     
+    @ObservedObject var buzzerManager: BuzzerManager
+    
     var triviaQuestion: TriviaQuestion
     
     @State var isAnsweringTime = true
     
     var body: some View {
         VStack(alignment: .leading) {
-            TimerView(duration: triviaQuestion.duration)
-                .frame(height: 30)
-                .padding(.vertical, 30)
-            
+            if isAnsweringTime {
+                TimerView(duration: triviaQuestion.duration)
+                    .frame(height: 30)
+                    .padding(.vertical, 30)
+                    .onAppear {
+                        Timer.scheduledTimer(withTimeInterval: triviaQuestion.duration, repeats: false) { _ in
+                            isAnsweringTime = false
+                        }
+                    }
+            }
             VStack(alignment: .leading) {
                 Text("Challenge 0")
                     .font(.system(size: 24, weight: .semibold))
@@ -39,17 +47,15 @@ struct TriviaQuestionView: View {
                 .frame(maxWidth: .infinity)
                 .padding(.bottom, 32)
         }
-        .onAppear {
-            Timer.scheduledTimer(withTimeInterval: triviaQuestion.duration, repeats: false) { _ in
-                isAnsweringTime = false
-            }
+        .onChange(of: buzzerManager.gameInfo["questionNo"]) { _ in
+            isAnsweringTime = true
         }
     }
 }
 
 struct TriviaQuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        TriviaQuestionView(triviaQuestion: TriviaQuestion(
+        TriviaQuestionView(buzzerManager: BuzzerManager(), triviaQuestion: TriviaQuestion(
             title: "Name one iPhone from every year in chronological order",
             duration: 30)
         )

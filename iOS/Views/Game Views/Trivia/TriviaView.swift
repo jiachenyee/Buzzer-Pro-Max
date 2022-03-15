@@ -63,6 +63,9 @@ struct TriviaView: View {
             }
             .padding()
             .foregroundColor(.white)
+            .onChange(of: question.title) { _ in
+                respondedToQuestion = false
+            }
         }
         .onTapGesture {
             if !respondedToQuestion {
