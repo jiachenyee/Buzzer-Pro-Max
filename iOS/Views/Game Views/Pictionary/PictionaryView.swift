@@ -45,10 +45,18 @@ struct PictionaryView: View {
                     ZStack(alignment: .top) {
                         CanvasView(canvasView: $canvas)
                         
-                        Text("Draw ZK Toon")
-                            .foregroundColor(.black)
-                            .font(.system(size: 36, weight: .bold))
-                            .padding()
+                        if let queryList = communicationManager.commandInfo["query"]?.split(separator: "\n"),
+                           let groupList = communicationManager.commandInfo["groupList"]?
+                            .split(separator: "\n")
+                            .map { String($0) },
+                           let roundNumberValue = communicationManager.commandInfo["roundNumber"],
+                           let roundNumber = Int(roundNumberValue),
+                           let index = groupList.firstIndex(of: String(group.number)) {
+                               Text(queryList[index * roundNumber])
+                                   .foregroundColor(.black)
+                                   .font(.system(size: 36, weight: .bold))
+                                   .padding()
+                        }
                     }
                 }
                 .edgesIgnoringSafeArea(.bottom)
