@@ -83,7 +83,9 @@ extension BuzzerManager: MCSessionDelegate {
             
         } else if let triviaBuzzerMessage = TriviaBuzzerMessage.from(data: data) {
             print(triviaBuzzerMessage.group)
-            #warning("Handle buzzer input")
+            if gameInfo["triviaResponses"] != nil {
+                gameInfo["triviaResponses"]?.append("\(triviaBuzzerMessage.group.number) - \(triviaBuzzerMessage.group.name)\n")
+            }
         }
     }
     

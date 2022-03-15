@@ -13,7 +13,6 @@ struct TriviaControlView: View {
     @State var hasGameStarted = false
     @State var isNextQuestionButtonDisabled = false
     @State var isReopenButtonDisabled = true
-    
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
@@ -25,6 +24,7 @@ struct TriviaControlView: View {
                 if !hasGameStarted {
                     Button {
                         buzzerManager.gameInfo["questionNo"] = nil
+                        buzzerManager.gameInfo["triviaResponses"] = ""
                         buzzerManager.send(message: CommandMessage(sendDate: .now,
                                                                    activeDate: .now.addingTimeInterval(2.5),
                                                                    gameState: .trivia,
@@ -45,6 +45,7 @@ struct TriviaControlView: View {
                         if let question = Int(buzzerManager.gameInfo["questionNo"]!) {
                             
                             if question < 9 {
+                                buzzerManager.gameInfo["triviaResponses"] = ""
                                 buzzerManager.send(message: CommandMessage(sendDate: .now, activeDate: .now.addingTimeInterval(2.5), gameState: .trivia, commandInfo: ["questionNo": "\(question+1)"]))
                                 Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
                                     buzzerManager.gameInfo["questionNo"] = "\(question+1)"
@@ -74,10 +75,26 @@ struct TriviaControlView: View {
                     .font(.system(size: 24, weight: .bold))
                     .frame(height: 60, alignment: .top)
                     .padding()
-                List(TriviaQuestion.all, id: \.title) { questionNo in
-                    Text("\(questionNo.title) - Answer: \(questionNo.answer)")
+                if let buzzedIn = buzzerManager.gameInfo["triviaResponses"]?.split(separator: "\n") {
+                    List(buzzedIn, id: \.self) { groupBuzzed in
+                        HStack {
+                            Text(groupBuzzed)
+                                .font(.system(size: 16))
+                            Button {
+                                print("Full")
+                            } label: {
+                                Text("Full")
+                                    .font(.system(size: 16))
+                            }
+                            Button {
+                                print("Half")
+                            } label: {
+                                Text("Half")
+                                    .font(.system(size: 16))
+                            }
+                        }
+                    }.frame(maxWidth: .infinity)
                 }
-                .frame(maxWidth: .infinity)
                 
             }.frame(width: 500)
                 .padding()
