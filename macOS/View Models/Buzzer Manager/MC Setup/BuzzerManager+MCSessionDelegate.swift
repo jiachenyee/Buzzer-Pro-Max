@@ -78,6 +78,9 @@ extension BuzzerManager: MCSessionDelegate {
             
         } else if let sketchGuessMessage = SketchGuessMessage.from(data: data) {
             gameInfo["sketchGuess"]?.append("\(sketchGuessMessage.group.number)\t\(sketchGuessMessage.guess)\n")
+            
+            print(sketchGuessMessage.group.number, sketchGuessMessage.guess)
+            addLog(emoji: "🫠", message: "\(sketchGuessMessage.group.number)-\(sketchGuessMessage.guess)")
         } else if let triviaBuzzerMessage = TriviaBuzzerMessage.from(data: data) {
             print(triviaBuzzerMessage.group)
             if gameInfo["triviaResponses"] != nil {

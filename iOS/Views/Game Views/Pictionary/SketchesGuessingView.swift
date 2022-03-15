@@ -38,7 +38,10 @@ struct SketchesGuessingView: View {
                 .padding()
                 
                 TextField("What's on screen?", text: $userResponse)
-                    .font(.system(size: 16))
+                    .font(.system(size: 32))
+                    .padding()
+                    .background(.white.opacity(0.1))
+                
                 Spacer()
             }
             .edgesIgnoringSafeArea(.bottom)
@@ -49,6 +52,8 @@ struct SketchesGuessingView: View {
                 communicationManager.send(message: SketchGuessMessage(group: group,
                                                                       sendDate: .now,
                                                                       guess: userResponse))
+                
+                communicationManager.gameState = .holding
             }
         }
     }

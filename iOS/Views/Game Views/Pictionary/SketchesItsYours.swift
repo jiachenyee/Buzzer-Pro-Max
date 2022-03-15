@@ -9,7 +9,11 @@ import SwiftUI
 
 struct SketchesItsYours: View {
     
+    var sendDate: Date
     var group: Group
+    
+    @ObservedObject var communicationManager: CommunicationManager
+
     
     var body: some View {
         ZStack {
@@ -42,12 +46,17 @@ struct SketchesItsYours: View {
             }
             .edgesIgnoringSafeArea(.bottom)
             .foregroundColor(.white)
+            .onAppear {
+                Timer.scheduledTimer(withTimeInterval: abs(sendDate.timeIntervalSinceNow), repeats: false) { _ in
+                    communicationManager.gameState = .holding
+                }
+            }
         }
     }
 }
 
 struct SketchesItsYours_Previews: PreviewProvider {
     static var previews: some View {
-        SketchesItsYours(group: Group(number: 1, name: "potaot"))
+        SketchesItsYours(sendDate: .now, group: Group(number: 1, name: "potaot"), communicationManager: .init())
     }
 }
