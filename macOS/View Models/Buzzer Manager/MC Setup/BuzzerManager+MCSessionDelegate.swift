@@ -57,8 +57,6 @@ extension BuzzerManager: MCSessionDelegate {
                 }
             }
         } else if let sketchMessage = SketchMessage.from(data: data) {
-            #warning("Incomplete implementation")
-            
             let sketch = sketchMessage.sketch
             
             let image = sketch.image(from: sketch.bounds, scale: 2)
@@ -79,8 +77,7 @@ extension BuzzerManager: MCSessionDelegate {
             gameInfo["drawingSubmissions"] = submissions.joined(separator: "\n")
             
         } else if let sketchGuessMessage = SketchGuessMessage.from(data: data) {
-            #warning("Incomplete implementation")
-            
+            gameInfo["sketchGuess"]?.append("\(sketchGuessMessage.group.number)\t\(sketchGuessMessage.guess)\n")
         } else if let triviaBuzzerMessage = TriviaBuzzerMessage.from(data: data) {
             print(triviaBuzzerMessage.group)
             if gameInfo["triviaResponses"] != nil {
