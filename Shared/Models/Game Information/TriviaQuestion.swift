@@ -16,7 +16,7 @@ struct TriviaQuestion {
         TriviaQuestion(title: "What is the latest version of Swift?", answer: """
 Swift 5.6
 """),
-        TriviaQuestion(title: "List all variants of the M1 Processor", answer: """
+        TriviaQuestion(title: "Name all the different M1 chips", answer: """
 M1
 M1 Pro
 M1 Pro Max
@@ -40,7 +40,7 @@ M1 Ultra
 2021 - iPhone 13 or iPhone 13 Mini or iPhone 13 Pro or iPhone 13 Pro Max
 2022 - iPhone SE Gen 3
 """),
-        TriviaQuestion(title: "Name 6 Applications Apple created for the Mac", answer: """
+        TriviaQuestion(title: "Name 6 applications Apple created for the Mac", answer: """
 Accept anything on the Mac LOL
 Final Cut Pro X
 Logic Pro
@@ -60,7 +60,7 @@ Accept any acceptable answers, suggested answers include:
 4. Open sourcing projects will help by having other people help you fix bugs and test your stuff
 
 """),
-        TriviaQuestion(title: "What year and when was the inaugural Swift Innovators' Summit Held?", answer: """
+        TriviaQuestion(title: "What year and where was the inaugural Swift Innovators' Summit Held?", answer: """
 10 November 2018
 School of Science and Technology, Singapore
 """),
@@ -70,14 +70,8 @@ Bing
         TriviaQuestion(title: "Which app did Group 0 make?", answer: """
 Let's Not
 """),
-        TriviaQuestion(title: "Describe any of the key pillars of Computational Thinking, giving its name and definition", answer: """
-Decomposition: Breaking down a complex problem or system into smaller, more manageable parts
-
-Algorithm: Developing a step-by-step solution to the problem, or the rules to follow to solve the problem
-
-Pattern Recognition: Looking for similarities among and within problems
-
-Abstraction: Focusing on the important information only, ignoring irrelevant detail
+        TriviaQuestion(title: "Name five other students from Swift Accelerator 2021 who are not here today", answer: """
+Whatever it's fine
 """),
         TriviaQuestion(title: "List 5 External Speakers that have spoken to your batch", answer: """
 Ans: Accept anything that makes sense 

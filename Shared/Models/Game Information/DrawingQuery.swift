@@ -24,11 +24,8 @@ struct DrawingQuery {
         DrawingQuery(query: "Draw Bluetooth"),
         DrawingQuery(query: "Draw copy and paste"),
         DrawingQuery(query: "Draw Terminal"),
-        DrawingQuery(query: "Draw something that represents User interface"),
         DrawingQuery(query: "Draw Swift Playgrounds"),
         DrawingQuery(query: "Draw Time Machine"),
-        DrawingQuery(query: "Draw Swift Accelerator"),
-        DrawingQuery(query: "Draw The SLS"),
         DrawingQuery(query: "Draw WebEx"),
         DrawingQuery(query: "Draw TraceTogether"),
         DrawingQuery(query: "Draw Webcam")
